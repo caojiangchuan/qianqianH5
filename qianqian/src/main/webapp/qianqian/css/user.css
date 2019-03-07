@@ -1,0 +1,25 @@
+.u_head{ width: 100%; height: 245px; background: #3A9FF0; text-align: center; padding-top:35px; }
+.u_head p{font-size:30px; color: #fff; margin-top: 15px;}
+
+.u_nav{ margin-top: 24px;}
+.u_nav li{ width: 100%; height: 94px; background: #fff; font-size:36px; line-height: 94px; position: relative;}
+.u_nav_txt{ height: 100%; line-height: 94px; width: 620px; float: right; }
+.u_nav_bor{ border-bottom: #e5e5e5 1px solid;}
+.u_nav li:nth-child(1){ background: url("../img/user/icon3.png") 44px center  no-repeat #fff; }
+.u_nav li:nth-child(2){ background: url("../img/user/icon4.png") 44px center  no-repeat #fff; }
+.u_nav li:nth-child(3){ background: url("../img/user/icon5.png") 44px center  no-repeat #fff;  margin-top: 24px;}
+.u_nav li:nth-child(4){ background: url("../img/user/icon6.png") 44px center  no-repeat #fff;  margin-top: 24px;}
+.u_sign_out{width:644px;   height:90px; background:rgba(58,159,240,1); border-radius:10px; font-size:40px; color: #fff; line-height: 90px; text-align: center; position: absolute; bottom: 172px; left: 54px;}
+
+.u_nav_p1{ width: 30px; height: 30px; background: url("../img/user/icon7.png"); top: 33px; right: 31px; }
+.u_nav_p2{ width: 11px; height: 21px; background: url("../img/user/icon8.png"); top: 37px; right: 30px; }
+.u_nav_p3{ color:#3A9FF0; font-size: 28px; line-height: 94px; right: 30px;}
+.u_rest_psw{ width:630px;  height:88px; background:rgba(245,245,245,1);  border-radius:10px; border: 1px #3A9FF0 solid; margin:0 auto 39px auto; position: relative; }
+.u_rest_psw1{ margin-top: 106px; }
+.u_rest_btn{ width:630px; height:88px;  background:rgba(58,159,240,1);  border-radius:10px; font-size:34px; line-height: 88px; text-align: center; color: #fff; margin: 79px auto 0 auto;}
+.u_rest_psw s{ display: inline-block; width: 25px; height: 31px; background: url("../img/user/icon9.png"); position: absolute; top: 28px; left: 29px;}
+.u_rest_psw p{ width: 3px; height: 34px; background: #C4C4C4; position: absolute; top: 28px; left: 80px;}
+
+.u_rtp_ipt{ width: 515px; height: 100%; line-height: 88px; border: none; background: none; position: absolute; top: 0; right: 0; font-size:30px;}
+::-webkit-input-placeholder { color:#c5c5c5;}
+:-moz-placeholder {color:#c5c5c5;}

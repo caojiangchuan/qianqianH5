@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+    body{padding:0px; margin:0px; background-color:#ffffff; position:relative; width:100%; height:100%; font-size:14px; color:#242424;}
+    html{width:100%; height:100%;}
+    select{ width:100%;}
+    table{ margin-top:0px;}
+    td{font-weight:normal; font-size:14px;}
+    #warp {height:auto; float:left; line-height:200%; padding:10px;
+    }
+    img { border:0px; padding:0px; margin:0px;}
+    ul li,ol li {list-style-type: none; text-align: left; margin:0px; padding:0px; font-size:14px;}
+    h3 { text-align:center; padding-bottom:15px;}
+    .font_g{color: #3C9FEF; font-size:14px;}
+     a{text-decoration: none;color: #3C9FEF; }
+    /*a:link {color: #3C9FEF; text-decoration: underline;}*/
+    a:visited {color: #3C9FEF; text-decoration: none;}
+    a:hover {color: #3C9FEF; text-decoration:none;}
+    a:active {color: #3C9FEF; text-decoration: none;}
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div id="app">
+<div id="warp">
+    <div class="content" id="content">
+        <div v-if="page1" v-cloak>
+        <strong id="01">如何在“证大前前”申请借款？</strong><br />
+        第一步：在“证大前前”成功注册登录，完成实名认证。<br />
+        第二步：在线填写申请信息，完善个人材料。<br />
+        第三步：审核通过后，完成签约流程。<br />
+        第四步：募集。<br />
+        第五步：放款。<br />
+
+        <br />
+        </div>
+        <div v-if="page2" v-cloak>
+        <strong id="02">申请借款需要什么材料？</strong><br />
+        1）年龄需在22周岁（含）——48周岁（含）之间，实际年龄以身份证为准；<br />
+        2）有效期在1个月以上的本人二代身份证原件；<br />
+        3）本人实名认证手机号进行注册；<br />
+        4）本人名下指定银行储蓄卡（I 类账户借记卡）；<br />
+        5）距申请时间30天之内的人行征信报告。 <br/> <br/>
+        </div>
+        <div v-if="page3" v-cloak>
+        <strong id="03">能借款多少钱？</strong><br />
+        目前可借款额度为1-20万元，您按照页面提示完善所有信息提交借款申请后，根据您的个人信用等级将给出审批额度。最终额度以营业部现场签约为准。<br />
+        <br/>
+        </div>
+        <div v-if="page4" v-cloak>
+        <strong id="04">借款人有哪些要求？</strong><br />
+        1）具有完全民事行为能力的中华人民共和国公民（不包含外籍人士、港澳台同胞、军人、武警军官）；<br />
+        2）法定年龄在22周岁（含）——48周岁（含）之间；<br />
+        3）具备足够的还款能力和稳定的还款来源。<br />
+      <br/>
+        </div>
+        <div v-if="page5" v-cloak>
+        <strong id="05">如何注册成为“证大前前”用户？</strong><br />
+        客户通过手机号即可注册，注册过程中需要通过手机获取短信验证。已贷款客户可直接通过签约预留手机号完成注册。<br />
+        <br />
+        </div>
+        <div v-if="page6" v-cloak>
+        <strong id="06">登录环节收不到验证码怎么办？</strong><br />
+        1）请尝试60秒后点击“获取验证码”重新获取；<br />
+        2）请查看是否已设置第三方软件对短信进行拦截，或者在垃圾短信中查看；<br />
+        3）如仍无法登录，请拨打客服电话<span class="font_g"><a href="tel:400-821-6888">400-821-6888</a></span>反馈，我们会尽快核查处理。<br />
+        <br/>
+        </div>
+        <div v-if="page7" v-cloak>
+        <strong id="07">登录时提示密码不正确怎么办？</strong><br />
+        请确保登录密码准确无误，如多次尝试仍提示密码错误，可通过短信方式登录。<br />
+        <br/>
+        </div>
+        <div v-if="page8" v-cloak>
+        <strong id="08">审核大概需要多长时间？</strong><br />
+        最快审核时间为1天。人工审核环节将有电话核实，如您审核时间过长，且仍未接到审核专员的来电，可能是您使用了第三方软件拦截通话所导致，请您暂时解除通话限制，避免漏接审核专员的电话，从而延误审核进度。<br />
+        <br/>
+        </div>
+        <div v-if="page9" v-cloak>
+        <strong id="09">审核失败，如何重新申请？</strong><br />
+        从审核拒绝到可以重申请的间隔时长根据不同情况而不同，请您关注APP状态或者短信信息。<br />
+        <br/>
+        </div>
+        <div v-if="page10" v-cloak>
+        <strong id="10">签约完成后，多久到账？</strong><br />
+        1）捞财宝客户：当借款进度显示为“募集中"，系统将在捞财宝平台完成募集。募集完成后，您可点击【我要提现】，钱款将打入您的银行账户，请留意银行卡余额变化。放款后点击【还款】即可查询每月还款金额详情。<br />
+        2）其他客户：当借款进度显示为“放款"，系统将直接把款项打入您的银行账户，请留意银行卡余额变化。放款后点击【还款】即可查询每月还款金额详情。<br />
+        <br/>
+        </div>
+        <div v-if="page11" v-cloak>
+        <strong id="11">APP已经显示还款计划表，但钱未到银行卡怎么办？</strong><br />
+        当APP已生成账单，但是钱未到银行卡内，建议您先致电绑定银行卡的发卡行，咨询最近几天的入账记录，确认钱未到账后，请您拨打客服电话<a href="tel:400-821-6888">400-821-6888</a>反馈，我们会尽快核查处理。<br />
+        <br/>
+        </div>
+        <div v-if="page12" v-cloak>
+        <strong id="12">已签署的合同如何再次浏览？</strong><br />
+        放款成功后，可在“个人中心”，点击【档案管理】查看已签署的合同。<br />
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/hotQuestion.js"></script>
+
+</html>

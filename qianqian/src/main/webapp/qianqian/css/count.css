@@ -1,0 +1,30 @@
+.ct_con{ width: 670px; margin: 30px auto 0 auto; }
+.ct_con li{ height: 99px; border-bottom: #ccc solid 1px; }
+.ct_con li .fl{ font-size: 30px; color: #666; line-height: 99px;}
+.ct_con li .fr{ font-size: 30px; color: #666; line-height: 99px;width: 430px;  text-align: right;}
+.ct_ipt1{ width: 430px;  text-align: right; font-size: 72px;line-height: 99px; color: #666666;vertical-align:middle; background: none;}
+.ct_ipt1::-webkit-input-placeholder {
+    color:    #ccc; font-size: 24px;line-height: 99px;vertical-align:middle
+}
+.ct_ipt1:-moz-placeholder {
+    color:    #ccc; font-size: 24px;line-height: 99px;vertical-align:middle
+}
+.ct_btn{width:670px; height:90px; background:#3a9ff0; font-size:34px; color: #fff; text-align: center; line-height: 90px; margin: 64px auto 0 auto; border-radius:10px;}
+
+.count2{ background: #fff; border-top: #efefef solid 20px; }
+.ct2_tt{ text-align: center; color: #242424; font-size: 32px; padding-top: 20px;}
+.ct2_p1{ width: 120px; float: left; text-align: right; color: #999; font-size: 28px; line-height: 32px;}
+.ct2_p2{ width: 265px; float: left; text-align: right; color: #242424; font-size: 32px; line-height: 32px;}
+.ct2_p3{ width: 126px; float: left; text-align: right; color: #999; font-size: 28px; line-height: 32px;}
+.ct2_p4{ width: 196px; float: left; text-align: right; color: #242424; font-size: 32px; line-height: 32px;}
+.ct2_p5{ width: 205px; float: left; text-align: right; color: #999; font-size: 28px; line-height: 32px;}
+.ct2_p6{ width: 200px; float: left; text-align: right; color: #242424; font-size: 32px; line-height: 32px;}
+
+.ct2_p7{ width: 100%; padding-left: 20px; height: 80px; line-height: 80px; border-top: #ccc solid 2px; margin-top: 20px; color: #999;}
+.ctr_ctab{ height: calc(100% - 350px);  overflow: auto; margin-top: 283px; width: 100%;  -webkit-overflow-scrolling:touch; }
+/*height: 100%;*/
+.ctr_tab th{ height: 80px;  background: #efefef; color: #2285eb; border-bottom: #ccc 1px solid; }
+.ctr_tab td{ text-align: center;height: 80px; border-bottom: #ccc 1px solid; color: #adadad;}
+.rm_ic14{ position: absolute; bottom: 98px;}
+
+

@@ -1,0 +1,488 @@
+/** 上拉菜单 **/
+.more_files{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-bottom: 2px solid #319ef3;
+    z-index: 11;
+}
+.more_files .file_title,.more_files li {
+    padding-left: 25px;
+    height:40px;
+    line-height: 40px;
+    font-size: 15px;
+    position: relative;
+}
+.more_files .file_title:after,.more_files li:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    background-color: #ccc;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+.more_files li:last-child:after{
+    height: 0;
+}
+.more_files li{
+    background: url("../../img/icons/signature_icon_file.png") 25px center no-repeat;
+    background-size:14px 18px;
+    padding-left: 45px;
+}
+.more_files li.active{
+    color: #329df2;
+}
+.more_files .file_title .arrow,.more_files .file_title .arrow_down{
+    position: absolute;
+    left: 100px;
+    top:15px;
+    border-right: 2px solid #666;
+    border-top: 2px solid #666;
+    width: 13px;
+    height: 13px;
+    transform:rotate(-45deg);
+}
+.more_files .file_title .arrow_down{
+    top:11px;
+    transform:rotate(135deg);
+}
+
+/** 遮罩 **/
+.mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+.mask.grey{
+    background-color: rgba(0,0,0,.7);
+    z-index: 20;
+}
+.demo-gallery{ height: 100%; overflow: auto;}
+
+/** 图片列表 **/
+.img_list{
+    position:absolute;
+    top:40px;
+    left:0px;
+    right:0px;
+    bottom:90px;
+    overflow:hidden;
+    -webkit-overflow-scrolling : touch;
+}
+.img_list img{
+    width: 95%;
+    margin:10px auto;
+    display: block;
+}
+
+/** 下拉菜单 **/
+.sign_block{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+}
+.sign_block2{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+
+}
+.sign_block .sign_title{
+    height: 31px;
+    background: url("../../img/icons/line_bg.png") left center repeat-x;
+    background-size:auto 31px;
+}
+.sign_title p,.sign_title p span{
+    width: 90px;
+    height: 31px;
+    display: block;
+    margin: 0 auto;
+    /* background: #fff; */
+}
+.sign_title p span{
+    background: url("../../img/icons/signature_down.png") center center no-repeat;
+    background-size:65px 31px;
+}
+.sign_block .sign_title p span.active{
+    background: url("../../img/icons/signature_up.png") center center no-repeat;
+    background-size:65px 31px;
+}
+.sign_body{
+    background: #fff;
+    position: relative;
+    padding-bottom: 20px;
+}
+.sign_body p.text{
+    font-size:13px;
+    padding:16px 15px 20px 45px;
+    line-height: 1.5;
+}
+.sign_body p.text a{
+    font-size:13px;
+    color: #329df2;
+    text-decoration: underline;
+}
+.checkbox_user{
+    width: 19px;
+    height: 19px;
+    background: url('../../img/icons/signature_icon_UNAgreed.png') no-repeat;
+    background-size: 19px 19px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+.checkbox_user.active{
+    background: url('../../img/icons/signature_icon_Agreed.png') no-repeat;
+    background-size: 19px 19px;
+}
+.checkbox_user input[type=checkbox]{
+    width: 19px;
+    height: 19px;
+    opacity: 0;
+}
+.sign_form{
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+.sign_form label, .sign_form span.tel{
+    font-size: 15px;
+    display: inline;
+    margin-right: 6px;
+    padding-left: 20px;
+}
+.sign_form label.icon_t{
+    background: url("../../img/icons/signature_icon_phone.png") 2px center no-repeat;
+    background-size:10px 17px;
+}
+.sign_form label.icon_c{
+    background: url("../../img/icons/signature_icon_code.png") left center no-repeat;
+    background-size:15px 15px;
+}
+.sign_form span.tel{
+    font-weight: bold;
+    padding-right: 6px;
+    letter-spacing: 1.5px;
+    padding-left: 0;
+}
+.sign_form button.send_code{
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    background: #aaa;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    outline: 0;
+    border: none;
+}
+@media screen and (max-width: 320px){
+    .sign_form button.send_code{
+        width: 70px;
+    }
+    .sign_form span.tel{
+        padding-right: 0;
+    }
+}
+.sign_form button.send_code.active{
+    background: #319df1;
+}
+.sign_form input[type=text]{
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+.sign_btn{
+    width: 292px;
+    height: 49px;
+    line-height: 49px;
+    background: #aaa;
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    outline: 0;
+    border: none;
+    border-radius: 25px;
+
+}
+.sign_btn.active{
+    background:linear-gradient(-90deg,rgba(101,181,238,1),rgba(83,172,238,1),rgba(60,159,239,1),rgba(83,172,238,1),rgba(100,181,238,1));
+}
+.sign_btn span:first-child{
+    width: 16px;
+    height: 18px;
+    background: url("../../img/icons/signature_icon_signature.png") no-repeat;
+    background-size:16px 18px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: sub;
+}
+.sign_btn span:nth-child(2){
+    vertical-align: top;
+}
+
+/** 查看授权书 **/
+.view_book{
+    position: fixed;
+    width: calc(100% - 40px);
+    height: calc(100% - 200px);
+    top: 100px;
+    left: 20px;
+    background: #fff;
+    border-radius: 6px;
+    z-index: 21;
+    -webkit-overflow-scrolling: touch;
+}
+.view_book .view_title{
+    padding: 10px 0;
+    font-size: 15px;
+    color: #329df2;
+    text-align: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.view_book .view_body{
+    height: calc(100% - 89px);
+    padding: 0 15px 15px 15px;
+    overflow: hidden;
+}
+.view_book .view_btn{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    color: #329df2;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background: #fff;
+}
+.reply_view{
+    display: none;
+    z-index: 30;
+}
+.reply_container {
+    position: absolute;
+    overflow: hidden;
+    z-index: 32;
+}
+.reply_list {
+    margin: 0 auto;
+    width: 100%;
+    height:14rem;
+    position: relative;
+    z-index: 31;
+}
+
+/** 协议 **/
+.agreement{
+    padding:0 12px 4px 12px;
+}
+.agreement h2{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin:11px 0 8px 0;
+}
+.agreement h3{
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.agreement p{
+    font-size: 13px;
+    line-height: 1.5;
+}
+.agreement_block{
+    width: 100%;
+    height: 264px;
+    border-top:1px solid #ccc;
+    padding: 17px 0 20px 0;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 21;
+}
+.agreement_form{
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+.agreement_form label, .agreement_form span{
+    font-size: 15px;
+    display: inline;
+    margin-right: 6px;
+    font-weight: bold;
+}
+.agreement_form span.tel{
+    font-weight: bold;
+    padding-right: 6px;
+    letter-spacing: 1.5px;
+    padding-left: 0;
+}
+.agreement_form button.send_code{
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    background: #aaa;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    outline: 0;
+    border: none;
+    vertical-align:top;
+    margin-left: 10px;
+}
+.agreement_form button.send_code span{
+    font-weight: 400;
+    margin-right: 0;
+}
+@media screen and (max-width: 320px){
+    .agreement_form button.send_code{
+        width: 86px;
+        margin-left: 0;
+    }
+}
+.agreement_form button.send_code.active{
+    background: #319df1;
+}
+.agreement_form input[type=text]{
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+.agreement_btn{
+    width: calc(100% - 40px);
+    height: 35px;
+    line-height: 35px;
+    background: #aaa;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    margin: 14px 20px 0 20px;
+    text-align: center;
+    font-weight: bold;
+    outline: 0;
+    border: none;
+}
+.agreement_btn.active{
+    background: #ff793c;
+}
+.agreement_btn span{
+    vertical-align: top;
+}
+.agreementInfo{
+    padding-left: 40px;
+    /* text-align: center; */
+    font-size: 13px;
+    padding-top: 4px;
+}
+.agreementInfo .txt_blue{
+    color: #329df2;
+}
+.agreementInfo .checkboxStyle{
+    width: 19px;
+    height: 19px;
+    background: url('../../img/icons/signature_icon_UNAgreed.png') no-repeat;
+    background-size: 19px 19px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.agreementInfo .checkboxStyle.active{
+    background: url('../../img/icons/signature_icon_Agreed.png') no-repeat;
+    background-size: 19px 19px;
+}
+.agreementInfo .checkboxStyle input[type=checkbox]{
+    visibility: hidden;
+}
+
+.span_w {font-size:14px; font-weight:bold;}
+.span_x {text-decoration:underline;}
+
+.agreement_active {
+    padding-bottom: 264px;
+}
+.custom_active{
+    padding-top: 40px;
+    background:#f4f4f4;
+}
+.scroll_fixed{
+    position: fixed;
+}
+
+.full-body{
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+#footerFixed{
+    position: absolute;
+}
+.count{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #999999;
+}
+.loading{width: 100%; height: 100%; background:rgba(0,0,0,0.5); position: fixed; top: 0px; z-index: 1000; }
+[v-cloak] {
+    display: none;
+}
+@media screen and (min-height: 668px){
+   .freeDiv{
+       width: 100%;
+       height: 80px;
+   }
+    .sign_btn{
+        width: 292px;
+        height: 49px;
+        line-height: 49px;
+        background: #aaa;
+        display: block;
+        color: #fff;
+        font-size: 16px;
+        margin: 0 auto;
+        text-align: center;
+        font-weight: bold;
+        outline: 0;
+        border: none;
+        border-radius: 25px;
+        position: relative;
+        top: 30px;
+    }
+}

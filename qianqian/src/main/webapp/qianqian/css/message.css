@@ -1,0 +1,17 @@
+.msg_head{ width: 100%; height: 78px; line-height: 78px;}
+.msg_hd_le,.msg_hd_ri{  width: 50%; height: 100%; line-height: 78px; text-align: center;background:rgba(255,255,255,1);border-bottom: #ccc solid 1px; color: #B3B3B3 }
+.msg_hd_le{ border-right: #ccc solid 1px;border-bottom-right-radius:8px; }
+.msg_hd_ri{ border-left: #ccc solid 1px; border-bottom-left-radius:8px; }
+.msg_hd_le.active{ color: #F56A2F; background: none; border: none;}
+.msg_con{ width: 100%; margin-top: 19px;}
+.msg_con li{ width: 100%; height: 72px; background: #fff; line-height: 72px; margin-bottom: 10px; position: relative; transition: all .4s ease 0s;}
+.msg_con li.act{ height: auto;}
+.msg_con li.act .msg_c_p1{ white-space: normal; }
+.msg_con li.act .msg_c_p3{ transform: rotate(180deg); }
+
+.msg_c_s{ width: 12px; height: 12px; background: rgb(255,0,0); display: block; position: absolute; top: 30px; left: 26px; border-radius: 100%; }
+.msg_c_p1{ float: left; color: #545454; font-size: 24px; line-height: 72px; margin-left: 70px; width: 394px; white-space: nowrap; text-overflow:ellipsis; overflow:hidden; }
+
+.msg_c_p2{ position: absolute; bottom: 0; right: 90px; width: 196px; text-align: right; color: #B2B2B2; font-size: 18px; line-height: 72px; }
+.msg_c_p3{ width: 30px; height: 18px; background: url("../img/icons/rm_ic13.png"); position: absolute; top: 26px; right: 26px; transition: all .4s ease 0s;}
+

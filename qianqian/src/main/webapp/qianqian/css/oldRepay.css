@@ -1,0 +1,44 @@
+.p1_btn{  width: 428px;    height: 81px;    position: absolute;    left: 148px;    top: 1167px;  }
+.p2_con{ width: 702px; border: 1px solid #ccc; border-radius: 8px;  margin: 20px auto 0 auto;}
+.p2_tit .s1{ font-size: 40px;  color: #444; }
+.p2_tit .s2{ font-size: 26px;  color: #666; }
+.p2_tit .s4{ font-size: 28px;  color: #329df2; float: right; padding-top: 17px; }
+.p2_time1 s{ width: 22px; height: 23px; background: url("../img/icons/oldRepay_icon1.png"); display: inline-block; }
+.p2_time2 s{ width: 22px; height: 22px; background: url("../img/icons/oldRepay_icon2.png"); display: inline-block; }
+.p2_time1{ margin-top: 25px;}
+.p2_time2{ margin-top: 15px;}
+.p2_time1 .s1,.p2_time2 .s1{ font-size: 24px; color: #666; margin-left: 5px; }
+.p2_time1 .s2,.p2_time2 .s2{ font-size: 30px; color: #444; margin-left: 5px; }
+.p2c_li1{ border-bottom: 1px solid #ccc ;padding:20px 20px 30px 20px; background: #fff;}
+.p2c_li2{ border-bottom: 1px solid #ccc ;padding:0 20px 30px 20px; }
+.p2c_li3{ padding:30px 20px; }
+.oldRepay_icon3{ float: right; margin-right: 49px;}
+.p2_li2_p1{ color: #666; padding-left: 275px; margin-top: 10px;}
+
+.p2_li2_tit{ line-height: 1em;}
+.p2_li2_tit .p1{ margin-top: 28px; width: 180px;  display: inline-block; font-size: 30px; color: #329df2;}
+.p2_li2_tit .p2{ margin-top: 28px;width: 230px;  display: inline-block; font-size: 30px; color: #666; text-decoration: line-through; font-style: italic; text-align: center; overflow: hidden}
+.p2_li2_tit .p3{ margin-top: 28px; display: inline-block; font-size: 36px; color: #ea1b1b; font-style: italic;   width: 203px; text-align: center; overflow: hidden;}
+.oldRepayBtn{ width: 650px; height: 80px; line-height: 80px; color: #fff; font-size: 34px; text-align: center; border-radius: 10px; background: #ff783c; margin: 72px auto 0 auto;}
+.p2_rule{ font-size: 24px; color: #666; width: 620px; line-height: 1.5em; position: absolute; bottom: 54px; left: 0; right: 0; margin-right: auto; margin-left: auto;}
+
+.p1_ic_time{ animation-duration: 1.2s;}
+.p1_ic2{ top: 150px; left: 44px; animation-delay: .1s; }
+.p1_ic3{ top: 250px; left: 190px; animation-delay: .4s;}
+.p1_ic1{ top: 363px; left: 0; animation-delay: .7s; }
+.p1_ic5{ top: 318px; left: 75px; animation-delay: 1.5s;}
+.p1_ic4{ top: 772px; left: 0; animation-delay: 1.3s;}
+.text1{ top: 1030px; left: 26px;animation-delay: 1.6s;}
+.p1_ic6{ top: 906px; left: 482px; animation-delay: 2.2s;}
+.p2c_li3_c1{ margin-bottom: 20px;}
+.p2c_li3_c1 .s1{  font-size: 30px; color: #000; }
+.p2c_li3_c1 .s2{  font-size: 36px; color: #ea1b1b;  float: right; padding-right: 34px;}
+.p2c_li3_c2{ padding-top: 20px; line-height: 1.5em; color: #444; border-top: 1px solid #ccc ; padding-top: 20px; background: url("../img/c/mark1.png") left 20px no-repeat; padding-left: 40px;}
+.oldRepay_mark1{ position: relative; top: -2px; margin-right: 2px;}
+
+#appAlert2{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.8); display: none; z-index: 99;}
+.appAl_con{ width: 543px; padding-top: 70px; background: #fff; position: absolute;  top: 50%;  left: 50%;  transform: translate(-50%, -50%); text-align:center; font-size: 32px; border-radius: 12px;}
+.appAl_text{ padding-bottom: 70px; line-height: 1.5em; border-bottom: #dbdbdb 1px solid;}
+.appAl_btn{ height: 90px; line-height: 90px; color: #37a3fd; }
+.loading{ display: none; z-index: 999;}
+.swiper-slide {height: auto !important;}

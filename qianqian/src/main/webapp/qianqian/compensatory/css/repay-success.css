@@ -1,0 +1,11 @@
+.successImg,.failImg{width: 66px; margin:  0 auto; margin-top: 80px; position: relative}
+.successImg img,.failImg img{ width: 100%;}
+.successImg:after{position: absolute;width: 21px;   height:21px; content: ''; right: -2px; background:url("../../img/success-right.png") no-repeat; background-size: 100%; bottom: -2px;}
+.successFont{font-size: 18px;  text-align: center;font-weight:bold; margin-top: 20px;  color:rgba(0,0,0,1);}
+.successTip{font-size: 15px; color: #808080; margin-top: 30px; text-align: center}
+.failTip2{margin-top: 10px !important;}
+.failTip{font-size: 15px; color: #808080; margin-top: 28px; text-align: center}
+.failImg:after{position: absolute;width: 21px;   height:21px; content: ''; right: -2px; background:url("../../img/repay-fail.png") no-repeat; background-size: 100%; bottom: -2px;}
+[v-cloak] {
+    display: none;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>选择银行卡</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="../css/com.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="css/addCard.css">
+    <script src="../js/lib/jquery3.2.1.min.js"></script>
+
+</head>
+<body style="overflow: auto">
+<div id="app">
+<ul class="cardList">
+    <li class="addCard"><a href="addCardMessage.html"><span class="addCard-font"><img src="../img/dc-add.png"><span class="addCard-fontSon">添加银行卡</span></span></a> </li>
+    <li v-cloak v-for="(site,index) in bankList" :class="index==listIndex?'active':''" @click="active(site,index)" :key="index"><p class="bankLogo"><img :src=`https://api.zendaimoney.com:8089/credit-server/static/images/${site.bankCode}.png`></p><p class="bankMessage"><span>{{site.bankName}}</span><span>{{site.account | bankCode}}</span></p></li>
+</ul>
+    <div class="sure" @click="sure" v-if="chooseBtn">确定</div>
+    <div id="appAlert" ><div class="biao_con biao_con2" ></div></div>
+
+    <!--loading-->
+    <div v-show="loading" class="loading">
+        <div style=" width: 136px;height: 122px; margin: 200px auto"><img src="img/icons/loading.gif" height="122" width="136"/></div>
+    </div>
+</div>
+</body>
+<script src="../js/lib/vue.js"></script>
+<!--<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>-->
+<!--<script>-->
+    <!--var vConsole = new VConsole();-->
+    <!--console.log('Hello world');-->
+<!--</script>-->
+<script src="js/addCard.js"></script>
+<script src="js/com.js"></script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>添加银行卡</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/bindingCard.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="binding_card" v-show="isBind">
+            <ul>
+                <li>
+                    <label>持卡人姓名</label>
+                    <input type="text" v-model.trim="bankCards.accountName" readonly="readonly" disabled="disabled">
+                </li>
+                <li>
+                    <label>持卡人身份证号码</label>
+                    <input type="text" v-model.trim="reversedIdCard" readonly="readonly" disabled="disabled">
+                </li>
+                <li>
+                    <label>银行卡号</label>
+                    <input type="tel" placeholder="请输入银行卡号" v-model.trim="bankCards.account" >
+                </li>
+                <li>
+                    <label>银行预留手机号</label>
+                    <input type="tel" placeholder="请输入手机号" v-model.trim="bankCards.reservedMobile" maxlength="11">
+                </li>
+                <li>
+                    <label>所属银行</label>
+                    <select name="bankName" id="bankName">
+                        <option v-for="(item, index) in bankCards.bankNames" v-bind:value="item.bankCode" v-bind:name="item.bankName">{{item.bankName}}</option>
+                    </select>
+                <li>
+                    <label>所属支行</label>
+                    <input type="text" placeholder="请输入所属支行" v-model.trim="bankCards.bankBranchName">
+                </li>
+            </ul>
+
+            <div class="code">
+                <input type="text" placeholder="请输入短信验证码" v-bind:readonly=!codeOff v-bind:disabled=!codeOff v-model.trim="code">
+                <button class="send_code" :class="sendCodeActive? 'active':''" @click="sendCode(code)" :disabled=!sendCodeActive>
+                    <span v-show="show">获取验证码</span>
+                    <span v-show="!show" class="count" style="display: none;">{{count}} s</span>
+                </button>
+            </div>
+
+            <button class="sign_btn" :class="btnActive? 'active':''" @click="signBtn" :disabled=!btnActive>
+                <span class="text">确 定</span>
+            </button>
+        </div>
+
+        <!-- 提示 -->
+        <div class="tips" :class="isTips? 'active':''" v-show="isTips">
+            <div class="text">{{tips}}</div>
+        </div>
+
+        <!-- 加载中弹窗 -->
+        <div class="fail_pop load_pop" v-show="loadingPop">
+            <div class="fail_icon loading"></div>
+            <div class="fail_message"><img src="img/icons/timg.gif" width="20" style="vertical-align: sub;"> 系统处理中，请稍后...</div>
+        </div>
+
+    </div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/lib/vue-resource.js"></script>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="js/common.js"></script>
+<script src="js/bindingCardAdd.js"></script>
+</html>

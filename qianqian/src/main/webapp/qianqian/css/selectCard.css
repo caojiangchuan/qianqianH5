@@ -1,0 +1,75 @@
+/* 选择银行卡 */
+.card_add{
+    height: 50px;
+    line-height: 50px;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 17px;
+    color: #329df2;
+    margin:10px 13px;
+    text-align: center;
+    position: relative;
+}
+.card_add:active{
+    background: #eee;
+}
+.card_add span{
+    font-size: 28px;
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    margin-left: -70px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.card_list li{
+    margin:10px 13px;
+    padding:10px 13px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+.card_list_disabled{ background: #E6E6E6 !important; color: #9F9F9F !important;}
+.card_list li.go:active{
+    background: #eee;
+}
+.card_list .bank_name,.card_list .bank_card_num{
+    display: block;
+    padding-right: 70px;
+    font-size: 17px;
+}
+.card_list .bank_card_num{
+    font-size: 17px; letter-spacing: 1px;
+}
+.card_list .binding_flag{
+    padding: 4px 8px;
+    font-size: 14px;
+    color:#FF5244 ;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    right: 13px;
+    margin-top: -16px;
+    z-index: 10;
+}
+.binding_flag2{
+    color: #329DF2 !important;
+}
+.binding_flag3{
+    color: #929292 !important;
+}
+
+.card_list .binding_flag.green{
+    background: #62c40d;
+}
+.card_list .binding_flag.red{
+    background: #f15846;
+}

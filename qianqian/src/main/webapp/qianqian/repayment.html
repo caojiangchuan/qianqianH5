@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi" user-scalable=no/>
+    <title>还款计划</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/repayment.css">
+</head>
+
+<body>
+<div class="content" data-role="page" v-cloak="">
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="page loading" v-show="loading">
+            <div class="ld_gif"></div>
+        </div>
+    </transition>
+    <div class="page" style="display: none;">
+        <div class="rm_hd">
+            <p class="rm_p1">当前应还金额(元)</p>
+            <p class="rm_p2">14700.00</p>
+            <div class="rm_btn1">我要还款</div>
+        </div>
+
+        <!--没有账单信息-->
+        <div class="rm_no_info"><p>没有账单信息</p></div>
+        <div class="rm_no_info"><p>没有账单信息</p></div>
+
+        <!--账单-->
+
+        <div class="rm_info">
+            <div class="rm_io_c1 clearfix">
+
+                <div class="rm_tel_lf fl">
+                    <div class="rm_tf_d1">
+                        <s class="rm_tf_s rm_tf_s3"></s>
+                        <div class="rm_tf_p">距还款日<span class="red">5天 剩余30期</span></div>
+                    </div>
+                    <div class="rm_tf_d3">2018-08-07</div>
+
+                </div>
+
+                <div class="fl rm_io_mid"></div>
+
+                <div class="rm_io_ri fl">
+
+                    <div class="rm_tf_d1">
+                        <s class="rm_tf_s rm_tf_s4"></s>
+                        <span class="rm_tf_p">应还金额</span>
+                    </div>
+                    <div class="rm_io_money">¥5000</div>
+
+                </div>
+
+            </div>
+            <div class="rm_io_c2 clearfix">
+                <p class="rm_io_c2_p1 fl">NO.DXJ87851200582101</p>
+                <div class="rm_io_c2_p2 fr">合同金额 <span class="red">¥30000</span></div>
+            </div>
+        </div>
+
+        <!--底部-->
+        <div class="rm_tel clearfix">
+            <div class="fl rm_tel_lf">
+                <div class="rm_tf_d1">
+                    <s class="rm_tf_s rm_tf_s2"></s>
+                    <span class="rm_tf_p">所属营业部</span>
+                </div>
+                <div class="rm_tf_d2">陆家嘴理财中心</div>
+            </div>
+
+            <div class="fl rm_tel_ri">
+                <div class="rm_tf_d1">
+                    <s class="rm_tf_s rm_tf_s3"></s>
+                    <span class="rm_tf_p">营业部电话</span>
+                </div>
+                <a class="rm_tf_d2" href="tel:021-64418602">021-64418602</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!--账单详情-->
+    <div class="pagea rm_con2" style="display: block;">
+        <div class="rmc2_list">
+            <div class="rm_overdue_ic"></div>
+            <div class="rmc2_lt_p1">
+                <span class="rmc2_lt_p1_sp1">随车贷</span> <span class="rmc2_lt_p1_sp2">第2期（共3期）</span>
+            </div>
+            <div class="rmc2_lt_p2">
+                <span class="rmc2_lt_p2_sp1">业务编号 </span>
+                <span class="rmc2_lt_p2_sp2">NO.DXJ15822402135001</span>
+            </div>
+            <div class="rmc2_lt_p3">
+                <span class="rmc2_lt_p2_sp1">最后还款日</span>
+                <span class="rmc2_lt_p2_sp2">2017-11-20</span>
+            </div>
+            <div class="rmc2_lt_p4">
+                <div class="rmc2_lt_p4_t1"><span class="rmc2_lt_p4_tsp1">逾期</span> <span
+                        class="rmc2_lt_p4_tsp2">已逾期14天</span></div>
+                <div class="rmc2_lt_p4_t1"><span class="rmc2_lt_p4_tsp1">罚息</span> <span class="rmc2_lt_p4_tsp2"> 100.00元</span>
+                </div>
+            </div>
+            <div class="rmc2_lt_line"></div>
+            <div class="rmc2_lt_p5">
+                <span class="rmc2_lt_p5_t1">还款金额</span>
+                <span class="rmc2_lt_p5_t2">   6100.00 元</span>
+                <div class="rmc2_lt_p5_btn" @click="repayment">还款</div>
+            </div>
+        </div>
+    </div>
+    <!--还款-->
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="pagea rm_con3" v-show="rm_con3">
+            <transition enter-active-class="animated fadeInUp" :leave-active-class="closeLeRi ? 'animated fadeOut' : 'animated fadeOutLeft' ">
+                <div class="rm_c3_con" v-show="rm_c3_con">
+                    <div class="rm_c3c_hd">
+                        <img src="img/icons/rm_ic9.png" class="rm_c3c_close" @click="rm_c3c_close">
+                        确认还款
+                    </div>
+                    <div class="rm_c3c_money clearfix">
+                        <p class="p1 fl">还款金额</p>
+                        <p class="p2 fr"><input value="6100.00" class="rm_c3c_my_it"> <span class="font30">元</span></p>
+                    </div>
+                    <div class="rm_c3c_bank clearfix">
+                        <p class="p1 fl">选择银行卡</p>
+                        <p class="p2 fr" @click="bank_list">上海银行 (2123) <img src="img/icons/rm_ic10.png" class="rm_ic10"></p>
+                    </div>
+                    <p class="rm_error">今日还款次数已达上限，请明日还款</p>
+                    <div class="rm_c3c_btn">确 定</div>
+                </div>
+            </transition>
+
+            <transition enter-active-class="animated fadeInRight"  leave-active-class="animated fadeOutRight">
+                <div class="rm_c3_con2" v-show="rm_c3_con2">
+                    <div class="rm_c3c_hd">
+                        <img src="img/icons/rm_ic11.png" class="rm_c4c_back" @click="rm_c4c_back">
+                        选择银行卡
+                    </div>
+                    <ul class="rm_bank_list">
+                        <li>上海银行 储蓄卡(2123) <s style="display: block;"></s></li>
+                        <li>上海银行 储蓄卡(2123) <s></s></li>
+                        <li>上海银行 储蓄卡(2123) <s></s></li>
+                        <li>上海银行 储蓄卡(2123) <s></s></li>
+                        <li>上海银行 储蓄卡(2123) <s></s></li>
+                        <li>上海银行 储蓄卡(2123) <s></s></li>
+                    </ul>
+                </div>
+            </transition>
+
+        </div>
+    </transition>
+    <!--选择银行卡列表-->
+    <div class="pagea rm_con4" style="display: none  ;">
+
+    </div>
+
+    <!--统一提示 无银行卡-->
+    <div class="cue">
+        <div class="cue_con">
+            <div class="cue_c_p1">
+                您无可还款银行卡，<br> 是否现在添加银行卡？
+            </div>
+            <div class="cue_c_p2 clearfix">
+                <div class="cue_cp2_close">取消</div>
+                <div class="cue_cp2_true">确定</div>
+            </div>
+        </div>
+    </div>
+    <!--<footer-nav post="2"></footer-nav>-->
+
+    <div id="appAlert">
+        <div class="biao_con"></div>
+    </div>
+
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="js/lib/prefixfree.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/repayment.js"></script>
+</html>

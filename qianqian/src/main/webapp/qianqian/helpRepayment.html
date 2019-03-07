@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body{padding:0px; margin:0px; background-color:#ffffff; position:relative; width:100%; height:100%; font-size:14px; color:#242424;}
+        html{width:100%; height:100%;}
+        select{ width:100%;}
+        table{ margin-top:0px;}
+        td{font-weight:normal; font-size:14px;}
+        #warp {height:auto; float:left; line-height:200%; padding:10px;
+        }
+        img { border:0px; padding:0px; margin:0px;}
+        ul li,ol li {list-style-type: none; text-align: left; margin:0px; padding:0px; font-size:14px;}
+        h3 { text-align:center; padding-bottom:15px;}
+        .font_g{color: #3C9FEF; font-size:14px;}
+
+        a{text-decoration: none;color: #3C9FEF; }
+        /*a:link {color: #3C9FEF; text-decoration: underline;}*/
+        a:visited {color: #3C9FEF; text-decoration: none;}
+        a:hover {color: #3C9FEF; text-decoration:none;}
+        a:active {color: #3C9FEF; text-decoration: none;}
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<div id="warp">
+    <div class="content" id="content">
+        <div v-if="page1" v-cloak>
+        <strong id="01">如何还款？</strong><br />
+        点击【我要还款】，进行还款操作。还款入账成功后，系统将推送入账通知到您的手机，请注意查收。<br /><br />
+        </div>
+        <div v-if="page2" v-cloak>
+        <strong id="02">如何确定还款日？</strong><br />
+        还款日以合同中约定的日期为准。<br /><br />
+        </div>
+        <div v-if="page3" v-cloak>
+        <strong id="03">还款后，如何确认是否还款成功？</strong><br />
+        请点击【还款计划】查看账单详情，如您已还款，“应还金额”将不显示。<br />
+        <br />
+        </div>
+        <div v-if="page4" v-cloak>
+        <strong id="04">还款失败怎么办？</strong><br />
+        请检查您的银行卡余额是否充足、确认银行卡是否允许扣款或已超过银行卡扣款限额，如均无问题且仍还款失败，请联系您所属营业部。<br />
+       <br />
+        </div>
+        <div v-if="page5" v-cloak>
+        <strong id="05">逾期后逾期费用如何计算？</strong><br />
+        您未在还款日进行还款，发生实际逾期情况，将会产生逾期费用，逾期费用收取标准会在合同中写明，具体计算方式，请以合同为准。<br />
+        若恶意逾期，您的逾期记录将会上传网络征信系统和中国信用网黑名单。<br /><br/>
+        </div>
+        <div v-if="page6" v-cloak>
+        <strong id="06">提前结清规则是什么？费用如何计算</strong><br />
+        提前结清，需要还当期本金、利息、服务费以及剩余未还本金和提前结清违约金，具体规则及计算方式请以合同为准。<br />
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/helpRepayment.js"></script>
+
+</html>

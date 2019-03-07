@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>帮助</title>
+    <style>
+        body{padding:0px; margin:0px; background-color:#ffffff; position:relative; width:100%; height:100%; font-size:14px; color:#242424;}
+        html{width:100%; height:100%;}
+        select{ width:100%;}
+        table{ margin-top:0px;}
+        td{font-weight:normal; font-size:14px;}
+        #warp {height:auto; float:left; line-height:200%; padding:10px;
+        }
+        img { border:0px; padding:0px; margin:0px;}
+        ul li,ol li {list-style-type: none; text-align: left; margin:0px; padding:0px; font-size:14px;}
+        h3 { text-align:center; padding-bottom:15px;}
+        .font_g{color: #3C9FEF; font-size:14px;}
+
+        a{text-decoration: none;color: #3C9FEF; }
+        /*a:link {color: #3C9FEF; text-decoration: underline;}*/
+        a:visited {color: #3C9FEF; text-decoration: none;}
+        a:hover {color: #3C9FEF; text-decoration:none;}
+        a:active {color: #3C9FEF; text-decoration: none;}
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <div id="warp">
+        <div class="content" id="content">
+
+    <div v-if="page1" v-cloak>
+        <strong >如何获取征信报告？</strong><br />
+        注册并登录“中国人民银行征信中心”官网（<a href="https://ipcrs.pbccrc.org.cn/">https://ipcrs.pbccrc.org.cn/</a>），选择“问题验证”、“银行卡验证”或“数字证书验证”，您在选择验证方式并提交申请的24小时后，人行征信中心会向您发送含有身份验证码的短信。您可以在收到身份验证码的7天内，返回官网填写并提交、完成征信授权。若获取不到征信验证码，建议联系人行征信客服电话：<span class="font_g">400-810-8866</span>。<br />
+        <img src="img/helpCenter/zx_01.png" width="100%" /><br />
+        <img src="img/helpCenter/zx_02.png" width="100%" /><br /><br />
+        <strong >为什么收不到征信身份验证码？</strong><br />
+        正常情况下，会在您提交查询申请的24个小时后，将身份验证码反馈给您。若您在申请查询24个小时后仍未收到反馈结果，可能是由于以下原因：一是您注册时填写的手机号码不正确；二是您的手机对短信进行了拦截，或短信接受出现异常；三是您在提交查询申请时，使用问题验证方式，经审核您未通过身份验证。您可以用注册时填写的登录名和密码登陆人行征信中心（<a href="https://ipcrs.pbccrc.org.cn/">https://ipcrs.pbccrc.org.cn/</a>）平台会显示您的信用信息产品处理状态。<br />
+    </div>
+
+        <div v-if="page2" v-cloak>
+            <strong >身份认证失败，提示“该身份证已注册”该怎么办？</strong><br />
+            请拨打客服热线<span class="font_g"><a href="tel:400-821-6888">400-821-6888</a></span>或联系您的专属客户经理。<br /><br />
+            <strong >如何正确上传身份证？</strong><br />
+            您可以选择〖扫描上传〗或者〖拍照上传〗。<br />
+            方式一〖扫描上传〗：分别点击扫描人像面／点击扫描国徽面，扫描时请您将您本人身份证原件对准手机中显示的扫描框，保证您的身份证在扫描框内。确保扫描后的身份证图片清晰，四角完整；<br />
+            方式二〖拍照上传〗：点击“拍照上传"后，分别点击上传身份证人像面/上传身份证国徽面，进入拍照时请您将您本人身份证原件对准手机中显示的拍照区域，保证您的身份证在拍照区域内。确保拍照后的身份证图片清晰，四角完整。<br /><br />
+            <strong>身份认证时，提示“识别信息有误，请重新识别”该怎么办？</strong><br />
+            1）请扫描您的身份证原件，确保照片清晰，四角完整。放在扫描框内进行扫描；<br />
+            2）建议您换个角度并在光线充足的环境多试几次，注意灯光反光，以免遮挡身份证信息部分；<br />
+            3）可能是设备不适配造成的，建议更换像素较高的设备。<br /><br />
+            <strong>人脸识别失败，提示"验证超时"该怎么办？</strong><br />
+            1）检查网络是否连接正常，请在无线网络或4G网络下进行操作；<br />
+            2）若网络连接正常，则可能由于百度接口异常导致，请退出后返回，稍后再试。<br /><br />
+            <strong>如何打开相机授权？</strong><br />
+            请核实是否已打开相机权限，具体打开步骤如下：<br />
+            iPhone：打开“设置”一“隐私"一“相机"找到证大前前 APP，点击进入，打开相机权限；<br />
+            vivo：进入i管家一一软件管理一软件权限管理一一找到证大前前APP一权限一拍照，在这里面开启软件允许拍照即可；<br />
+            华为：设置一权限管理一向下滑动找到〖安全防御〗栏目下的〖调用撮像头〗，找到证大前前APP，点击选择 〖允许〗字样；<br />
+            小米：安全中心一一授权管理一应用权限管理，找到证大前前APP,打开相机权限；<br />
+            三星：设定一应用程序一应用程序许可，找到证大前前 APP，勾选使用撮像头权限；<br />
+            魅族：设置一应用管理，找到证大前前APP，点击权限管理，找到拍照和录像，打开相机权限。
+            <br />
+            <img src="img/helpCenter/sf_01.png" width="100%" /><br />
+            <img src="img/helpCenter/sf_02.png" width="100%" /><br />
+            <img src="img/helpCenter/sf_03.png" width="100%" /><br />
+            <img src="img/helpCenter/sf_04.png" width="100%" /><br />
+            <br />
+        </div>
+
+            <div v-if="page3" v-cloak>
+                <strong >目前支持绑定哪些银行卡？</strong><br />
+                您在绑定银行卡环节可选择：中国建设银行、中国光大银行、中国工商银行、中国银行、兴业银行、上海浦东发展银行、中国农业银行、广发银行、平安银行、上海银行、民生银行的储蓄卡进行绑定。<br /><br />
+
+
+                <strong >什么是银行预留手机号？如何变更？</strong><br />
+                银行预留手机号是您办理银行卡相关业务时在银行登记的手机号，如果您的银行预留手机号已不再使用，或由于其他原因需要变更，可携带身份证及银行卡前往附近银行柜台在工作人员协助下进行修改。<br /><br />
+
+
+                <strong >如何区分银行卡Ⅰ类 Ⅱ类 Ⅲ类账户？</strong><br />
+                若您绑卡失败，请致电发卡银行客服确认您的银行卡账户类型，如您已了解银行卡使用功能，请按照以下提示进行分类：<br />
+                Ⅰ类账户是一个全功能的银行账户（借记卡）<br />
+                Ⅱ类账户不能存款、支取现金、向非绑定账户转账，且单日支付限额1万元；<br />
+                Ⅲ类账户余额不得超过1000，适合小额高频交易。<br /><br />
+
+
+                <strong >绑定银行卡失败怎么办？</strong><br />
+                1）请确认银行卡为本人所有，并确保银行卡信息正确；<br />
+                2）目前仅支持绑定储蓄卡，不支持绑定信用卡；<br />
+                3）请核实填写的银行预留手机号是否正确，如不正确建议致电发卡行客服咨询；<br />
+                4）更换其他银行卡再次尝试。<br /><br />
+
+
+                <strong>银行卡遗失或变更银行卡，如何操作？</strong><br />
+                1）点击【个人中心】，选择【银行卡管理】，再点击【添加银行卡】，进行新卡绑定。<br />
+                2）点击【我要还款】，在选择还款银行卡界面，点击【添加银行卡】，进行新卡绑定。“证大前前”APP只支持新增银行卡，不可删除已绑定银行卡。<br />
+        </div>
+
+        <div  v-if="page4" v-cloak>
+            <strong >联系人上传失败怎么办？</strong><br />
+            请核实是否已打开通讯录权限，具体打开步骤如下，<br />
+            iPhone：打开“设置”，下滑找到“证大前前”APP，点击进入，打开“通讯录”权限，允许访问。<br />
+            Vivo：i管家—权限管理—应用，找到“证大前前”APP，打开“允许访问联系人”权限。<br />
+            华为：设置—权限管理，找到“证大前前”APP，点击进入，打开“通讯录”权限，允许访问。<br />
+            小米：安全中心—授权管理—应用权限管理，找到“证大前前”APP，打开“读取联系人”权限，允许访问。<br />
+            魅族：手机管家—权限管理—应用权限管理，在“应用管理”中找到“证大前前”APP，打开“读取联系人信息”权限，允许访问。<br />
+            三星：设定—应用程序—应用程序许可，找到“证大前前”APP，打开“读取联系人”权限。<br />
+            <img src="img/helpCenter/sf_05.png" width="100%" /><br />
+            <img src="img/helpCenter/sf_06.png" width="100%" /><br />
+            <img src="img/helpCenter/sf_07.png" width="100%" /><br />
+            <img src="img/helpCenter/sf_08.png" width="100%" /><br />
+            <br/>
+        </div>
+
+        <div  v-if="page5" v-cloak>
+            <strong >如何获取学信网用户名和密码？</strong><br />
+            第一步：打开中国高等教育学生信息网https://www.chsi.com.cn/xlcx/index.jsp，点击“学历查询”。<br />
+            <img src="img/helpCenter/xl_01.png" width="100%" /><br /><br />
+
+            第二步：点击本人查询下方的“查询”按钮。<br />
+            <img src="img/helpCenter/xl_02.png" width="100%" /><br /><br />
+
+            第三步：若是未注册用户，点击“注册学信网账号”，按步骤注册用户名和密码；若是已注册用户，忘记用户名和密码，点击“登录学信档案”，找回用户名和密码。<br />
+            <img src="img/helpCenter/xl_03.png" width="100%" /><br />
+            <img src="img/helpCenter/xl_04.png" width="100%" /><br /><br />
+
+
+            <strong >如何获取国外/境外学历认证书编号？</strong><br />
+
+            第一步：打开国（境）外学历学位认证系统http://renzheng.cscse.edu.cn/Login.aspx<br />
+            <img src="img/helpCenter/xl_05.png" width="100%" /><br /><br />
+
+            第二步：未进行学历认证的用户，点击“注册”，注册个人账户，并按照以下步骤完成学历认证。<br />
+            <img src="img/helpCenter/xl_06.png" width="100%" /><br /><br />
+
+            第三步：收到认证书后，即可查看认证书编号。<br />
+            <img src="img/helpCenter/xl_07.png" width="100%" /><br /><br />
+
+            第四步：已进行学历认证的用户，可直接查看认证书上的编号。<br/><br/>
+        </div>
+
+        <div v-if="page6" v-cloak>
+            <strong >保单信息如何填写？</strong><br />
+            投保公司、投保时间、缴费方式、缴费金额参照红色标示<br />
+            <img src="img/helpCenter/bd_01.png" width="100%" /><br /><br />
+
+
+            <strong >保单审核后续需要提供什么补充资料？</strong><br />
+            1）纸质合同（模版）<br />
+            注：须有保单编号、保险合同成立生效日、投保人姓名、被保险人姓名、身份证号码、保险费率、缴费
+            <br />
+            <img src="img/helpCenter/bd_02.png" width="100%" /><br /><br />
+
+            2）电子合同（模版）<br />
+            注：须显示完整网址；须显示投保人、被保险人、保单编号、生效日期、缴至日期、险种信息、保单状态、每期缴费金额
+            <br />
+            <img src="img/helpCenter/bd_03.png" width="100%" /><br /><br/>
+        </div>
+
+        <div v-if="page7" v-cloak>
+            <strong >若房产无按揭（抵押）贷款，需要上传什么资料？</strong><br />
+            1）房产证或购房合同。<br />
+            房产证：含房地产权证及不动产权证。<br />
+            注：包括房产信息页及附记页，房产证记载各项信息须清晰完整。<br />
+            房地产权证（样本）：
+            <br />
+            <img src="img/helpCenter/fc_01.png" width="100%" /><br /><br />
+
+            房地产权证（实例）：
+            <br />
+            <img src="img/helpCenter/fc_02.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_03.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_04.png" width="100%" /><br /><br />
+
+            不动产权证（样本）：
+            <br />
+            <img src="img/helpCenter/fc_05.png" width="100%" /><br /><br />
+
+            不动产权证（实例）：
+            <br />
+            <img src="img/helpCenter/fc_06.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_07.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_08.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_09.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_10.png" width="100%" /><br /><br />
+
+            购房合同：<br />
+            注：须提供显示交易甲、乙、丙（如有）各方的首页、交易的房产地址页和各方签字盖章页；<br />
+            私人之间买卖合同须有中介公司、公证处或房管局备案等第三方公证且盖章。<br />
+            购房合同（范本）：
+            <br />
+            <img src="img/helpCenter/fc_11.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_12.png" width="100%" /><br /><br />
+
+            2）您房产地址下近1个月的公共事业费单据（水费、电费、燃气费任一），且单据户名需与房屋产权所有人姓名一致。<br />
+            注：1）单据户名须与房屋产权所有人姓名一致<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2）单据地址须与房屋产权地址一致<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3）单据日期距离申请日期30天内<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4）须显示完整缴费户号或账户编号<br />
+            示例一：<br />
+            <img src="img/helpCenter/fc_13.png" width="100%" /><br /><br />
+
+            示例二：<br />
+            <img src="img/helpCenter/fc_14.png" width="100%" /><br /><br />
+
+
+            <strong>若房产有按揭（抵押）贷款，需要上传什么资料？</strong><br />
+            1.房产证，或购房合同，或房屋按揭（抵押）借款合同<br />
+            1）房产证或购房合同。<br />
+            房产证：含房地产权证及不动产权证。<br />
+            注：包括房产信息页及附记页，房产证记载各项信息须清晰完整。<br />
+            房地产权证（样本）：
+            <br />
+            <img src="img/helpCenter/fc_15.png" width="100%" /><br /><br />
+
+            房地产权证（实例）：
+            <br />
+            <img src="img/helpCenter/fc_16.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_17.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_18.png" width="100%" /><br /><br />
+
+            不动产权证（样本）：
+            <br />
+            <img src="img/helpCenter/fc_19.png" width="100%" /><br /><br />
+
+            不动产权证（实例）：
+            <br />
+            <img src="img/helpCenter/fc_20.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_21.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_22.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_23.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_24.png" width="100%" /><br /><br />
+
+            购房合同：<br />
+            注：须提供显示交易甲、乙、丙（如有）各方的首页、交易的房产地址页和各方签字盖章页；<br />
+            私人之间买卖合同须有中介公司、公证处或房管局备案等第三方公证且盖章。<br />
+            购房合同（范本）：
+            <br />
+            <img src="img/helpCenter/fc_25.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_26.png" width="100%" /><br /><br />
+
+            2）房屋按揭（抵押）借款合同。
+            注：须提供显示交易各方的首页及贷款双方签字盖章页；
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贷款合同须显示房产地址页或房产抵押物清单页；<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按揭贷款合同须显示贷款人信息页，抵押贷款合同须有显示抵押人信息页。<br />
+            借款合同（范本）：
+            <br />
+            <img src="img/helpCenter/fc_27.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_28.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_29.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_30.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_31.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_32.png" width="100%" /><br /><br />
+
+            抵押合同（范本）：
+            <br />
+            <img src="img/helpCenter/fc_33.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_34.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_35.png" width="100%" /><br />
+            <img src="img/helpCenter/fc_36.png" width="100%" /><br /><br />
+
+            2.近6个月房屋按揭（抵押）贷款还款流水<br />
+            注：须显示户名，卡号，交易日期，打印日期，须提供完整的流水交易明细；<br />
+            银行流水打印时间要求：15个自然日内；房屋还款流水须提供近6个月。
+            <br />
+            示例：<br />
+            <img src="img/helpCenter/fc_37.png" width="100%" /><br /><br/>
+        </div>
+
+        <div v-if="page8" v-cloak>
+            <strong >车产信息需要上传什么资料？</strong><br />
+            1.车辆登记证（范本）<br />
+            注：车辆登记证所有记载项必须清晰完整，且含有交警支队盖章页、登记栏页
+            <br />
+            <img src="img/helpCenter/cc_01.png" width="100%" /><br />
+            <img src="img/helpCenter/cc_02.png" width="100%" /><br /><br />
+
+            2.车辆行驶证（范本）<br />
+            注：车辆行驶证所有记载项必须清晰完整（主页+副页），且有交警支队盖章和检验合格盖章
+            <br />
+            <img src="img/helpCenter/cc_03.png" width="100%" /><br /><br />
+
+            3.驾照
+            <br />
+            <img src="img/helpCenter/cc_04.png" width="100%" /><br /><br/>
+        </div>
+
+        <div v-if="page9" v-cloak>
+            <strong >如何获得“淘宝--个人资料”？</strong><br />
+            1）打开手机淘宝，点击右下角“我的淘宝”<br />
+            <img src="img/helpCenter/tb_01.png" width="100%" /><br /><br />
+
+            2）点击头像或“设置”图标<br />
+            <img src="img/helpCenter/tb_02.png" width="100%" /><br /><br />
+
+            3）提供完整“个人资料”（淘宝头像、会员名、会员昵称、二维码名片及性别）<br />
+            <img src="img/helpCenter/tb_03.png" width="100%" /><br /><br />
+
+
+            <strong>如何获取“我的淘气值-淘气值解读与提升”？</strong><br />
+
+            1）打开手机淘宝，进入“我的淘宝”，查看淘气值
+            <br />
+            <img src="img/helpCenter/tb_04.png" width="100%" /><br /><br />
+
+            2）点击右下角“淘气值”，进入“淘气值解读与提升”页面。<br />
+            <img src="img/helpCenter/tb_05.png" width="100%" /><br /><br />
+
+            3）提供完整的“淘气值解读与提升”（含本期分值及分值组成）<br />
+            注：在“分值组成”下方，“本期 ¥29601”即为“淘宝年消费额”
+            <br />
+            <img src="img/helpCenter/tb_06.png" width="100%" /><br /><br />
+
+
+            <strong >如何获取“我的淘宝-我的订单-订单详情”？</strong><br />
+
+            1）打开手机淘宝，进入“我的淘宝”-我的订单
+            <br />
+            <img src="img/helpCenter/tb_07.png" width="100%" /><br /><br />
+
+            2）交易记录购买详情（收货人须为申请人，收货地址为单位或家庭地址）<br />
+            注：距离申请时间3个月内及6个月前购买交易记录（仅接受实体物品，不接受如手机充值等虚拟物品）；3个月内交易明细须有详细的物流信息。
+            <br />
+            <img src="img/helpCenter/tb_08.png" width="100%" /><br />
+            <img src="img/helpCenter/tb_09.png" width="100%" /><br /><br />
+
+
+            <strong >如何获取“手机淘宝-我的支付宝-查看更多服务”？</strong><br />
+            打开手机淘宝，进入“我的淘宝”-我的支付宝-点击更多服务
+            <br />
+            <img src="img/helpCenter/qt.png" width="100%" /><br /><br />
+
+
+            <strong >如何获取“手机支付宝-我的-个人信息”？</strong><br />
+
+            1）打开手机支付宝-我的，点击“>”图标
+            <br />
+            <img src="img/helpCenter/tb_10.png" width="100%" /><br /><br />
+
+            2）手机支付宝-我的-个人信息完整页面（含身份认证、支付宝账号、我的二维码、淘宝会员用户名等）
+            <br />
+            <img src="img/helpCenter/tb_11.png" width="100%" /><br /><br />
+
+
+            <strong>如何查看花呗额度？</strong><br />
+
+            1）途径一：<br />
+            打开支付宝，点击“我的”—“花呗”，进入“花呗”页面。
+            <br />
+            <img src="img/helpCenter/tb_12.png" width="100%" /><br /><br />
+
+            途径二：<br />
+            手机淘宝-我的淘宝-必备工具-花呗（必备工具-查看全部工具-花呗）
+            <br />
+            <img src="img/helpCenter/tb_13.png" width="100%" /><br /><br />
+
+            2）点击“查看详情”，进入“我的额度”页面
+            <br />
+            <img src="img/helpCenter/tb_14.png" width="100%" /><br /><br />
+
+            3）总额度即为花呗额度
+            <br />
+            <img src="img/helpCenter/tb_15.png" width="100%" /><br /><br />
+
+
+            <strong >如何查看借呗额度？</strong><br />
+
+            1）途径一：<br />
+            打开支付宝，点击“我的”—“蚂蚁借呗”，进入“蚂蚁借呗”页面
+            <br />
+            <img src="img/helpCenter/tb_16.png" width="100%" /><br /><br />
+
+            途径二： <br />
+            手机淘宝-我的淘宝-我的卡片-我的支付宝-更多服务-蚂蚁借呗
+            <br />
+            <img src="img/helpCenter/tb_17.png" width="100%" /><br />
+            <img src="img/helpCenter/tb_18.png" width="100%" /><br /><br />
+
+            2）文字中的“总额度40,000元”，即为蚂蚁借呗额度。（支付宝）
+            <br />
+            <img src="img/helpCenter/tb_19.png" width="100%" /><br /><br />
+        </div>
+
+        <div v-if="page10" v-cloak>
+            <strong >如何获取居住证明资料？</strong><br />
+            1、您近3个月内在外卖APP，或主流购物网站（如：大众点评、饿了么、美团外卖等）成功订餐或购物的记录，且收货人是您本人、配送地址与您的居住地址一致。<br />
+            注：须显示详细网址，订单号码、下单时间、送达时间、收货地址、配送方式、支付方式、订单明细。<br />
+            2、您居住地址近2个月内的公共事业费单据（以下任一），且单据户名与您的姓名一致。<br />
+            如：水费、电费、燃气费、供暖费、固定电话费、移动电话费、网络宽带费、有线电视费。<br />
+            纸质：仅接受机打版本<br />
+            电子：须显示详细网址、须显示完整缴费户号或账户编号<br />
+            纸质版本（范本）：
+            <br />
+            <img src="img/helpCenter/jz_01.png" width="100%" /><br /><br />
+
+            电子版本（范本）：
+            <br />
+            <img src="img/helpCenter/jz_02.png" width="100%" /><br /><br />
+
+            3、您持有的银行信用卡月度对账单，寄送地址与您的居住地址一致。<br />
+            注：仅支持纸质账单。仅认可机打版本。<br />
+            4、若您的居住地为自有产权，可提供房产证或购房合同。<br />
+            注：可参考房产资料。
+            <br />
+
+            <br/>
+        </div>
+
+        <div v-if="page11" v-cloak>
+            <strong >如何获取公积金/社保信息？</strong><br />
+            可拨打公积金及社保官方服务热线或登录官网查询账号信息<br />
+            公积金查询热线：12329  社保查询热线：12333<br />
+            社保查询官网：http://www.12333sb.com/<br />
+            全国各地公积金官网不统一，可登陆百度或拨打官网热线进行查询。
+            <br />
+            <img src="img/helpCenter/gjj_01.png" width="100%" /><br /><br/>
+        </div>
+
+        <div v-if="page12" v-cloak>
+        <strong >如何获取工作证明？</strong><br />
+        1）工作单位签署的劳动合同<br />
+        注：合同中须包含劳动者及用人单位的基本信息、合同期限、工作内容与地点、劳动条件、劳动报酬、社会保险、终止条件等要素，劳动合同须有劳动者签字及用人单位盖章，公司盖章须为公章或人力资源章<br /><br />
+        2）工牌或工作证<br />
+        注：须包含公司名称、客户姓名、工号、部门、客户工作照头像
+        <br />
+        <img src="img/helpCenter/gz_01.png" width="100%" /><br /><br />
+
+        3）名片<br />
+        注：须包含公司名称（logo）、客户姓名、单位地址、单位电话、邮箱、微信/QQ号<br />
+        </div>
+    </div>
+
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/interrogation.js"></script>
+
+</html>

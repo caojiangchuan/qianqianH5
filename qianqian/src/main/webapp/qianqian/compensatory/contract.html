@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>授权协议</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="../css/photoswipe.css"/>
+    <link rel="stylesheet" href="../css/default-skin.css"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/contract.css">
+    <script src="../js/lib/jquery3.2.1.min.js"></script>
+
+</head>
+<!--<style>-->
+    <!--* {-->
+        <!--margin: 0;-->
+        <!--padding: 0;-->
+    <!--}-->
+    <!--body, html {-->
+        <!--width: 100%;-->
+        <!--height: 100%;-->
+    <!--}-->
+    <!--.bottom {-->
+        <!--position: absolute;-->
+        <!--left: 0;-->
+        <!--bottom: 0;-->
+        <!--width: 100%;-->
+        <!--font-size: 0;-->
+    <!--}-->
+    <!--input {-->
+        <!--font-size: 14px;-->
+        <!--box-sizing: border-box;-->
+        <!--width: 50%;-->
+        <!--height: 50px;-->
+        <!--line-height: 50px;-->
+    <!--}-->
+<!--</style>-->
+
+
+
+<body>
+<div id="app">
+    <div class="img_list">
+        <div class="demo-gallery">
+            <a href="#"><img id="img1" v-bind:src="selectMenuText" /></a>
+        </div>
+    </div>
+
+    <!-- 上拉菜单 -->
+    <div class="more_files">
+        <div class="file_title" @click="showToggle">更多文件
+            <span :class="isShow? 'arrow':'arrow_down'"></span>
+        </div>
+        <transition name="fade">
+            <ul v-show="isShow" v-cloak>
+                <li v-for="(item, index) in moreFiles" v-bind:value=item.fileNum :class="{active:index==moreFilesActive}" @click="filesOpen(index,item.fileName)">{{item.title}}</li>
+            </ul>
+        </transition>
+    </div>
+
+    <!-- 下拉菜单 -->
+    <div class="sign_block"  v-cloak>
+        <div class="sign_title" @click="showSignBlock">
+            <p>
+                <span :class="isSignShow? 'active':''"></span>
+            </p>
+        </div>
+        <transition name="fade">
+            <div class="sign_body" v-show="isSignShow">
+                <div class="checkbox_user" :class="checked? 'active':''">
+                    <label for="signCheckbox">
+                        <input id="signCheckbox" type="checkbox" v-model="checked" @change="signCheck">
+                    </label>
+                </div>
+                <p class="text">请仔细阅读《委托划扣授权书》和《自愿代偿声明书  》《电子签章授权委托书》、《电子认证服务协议》，点击签名表示您同意授权我司代为申请数字证书并完成以上协议的签署
+                </p>
+                <div class="sign_form">
+                <label class="icon_t">手机号：</label>
+                <span class="tel">{{moreFilesphone | phone}}</span>
+                <button class="send_code" :class="sendCodeActive? 'active':''" @click="sendCode(code)" >
+                <span v-show="show">发送验证码</span>
+                <span v-show="!show" class="count">{{count}} s</span>
+                </button>
+                </div>
+                <div class="sign_form">
+                <label class="icon_c">验证码：</label>
+                <input type="tel" @blur="down"  class="bInput"    v-model.trim="code"  maxlength="6" style="width: 100px; height: 25px; border-radius: 2px; border: 1px solid #999999" />
+                </div>
+                <button class="sign_btn" :class="btnActive? 'active':''" @click="signBtn" :disabled=!btnActive>
+                    <span></span>
+                    <span class="text">还款</span>
+
+                </button>
+                <div class="freeDiv"></div>
+
+            </div>
+        </transition>
+    </div>
+
+
+    <!-- 查看授权书 -->
+
+
+    <!-- 提示 -->
+    <div class="tips" :class="isTips? 'active':''" v-show="isTips">
+        <div class="text">{{tips}}</div>
+    </div>
+
+    <!-- 绑定弹窗 -->
+
+
+    <!-- 加载中弹窗 -->
+
+    <div id="appAlert" ><div class="biao_con biao_con2" ></div></div>
+    <!--loading-->
+    <div v-show="loading" class="loading">
+        <div style=" width: 136px;height: 122px; margin: 200px auto"><img src="img/icons/loading.gif" height="122" width="136"/></div>
+    </div>
+</div>
+</div>
+</body>
+<script>
+    // $(function () {
+    //     var timer = null;
+    //     $('.bInput').on('focus', function() {
+    //         clearInterval(timer);
+    //         var index = 0;
+    //         timer = setInterval(function() {
+    //             if(index>5) {
+    //                 $('body').scrollTop(2000000);
+    //                 clearInterval(timer);
+    //             }
+    //             index++;
+    //         })
+    //     })
+    //
+    // })
+</script>
+<script src="../js/lib/vue.js"></script>
+<script src="../js/lib/vue-resource.js"></script>
+<script src="../js/lib/vconsole.min.js"></script>
+<script src="../js/lib/photoswipe.min.js"></script>
+<script src="../js/lib/photoswipe-ui-default.min.js"></script>
+<script src="../js/lib/iscroll.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="js/com.js"></script>
+<script src="js/contract.js"></script>
+</html>

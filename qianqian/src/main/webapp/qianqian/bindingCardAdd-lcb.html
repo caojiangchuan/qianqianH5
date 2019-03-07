@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>添加银行卡</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/bindingCard.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="binding_card" v-show="isBind">
+            <ul>
+                <li>
+                    <label>持卡人姓名</label>
+                    <input type="text" v-model.trim="bankCards.accountName" readonly="readonly" disabled="disabled">
+                </li>
+                <li>
+                    <label>持卡人身份证号码</label>
+                    <input type="text" v-model.trim="reversedIdCard" readonly="readonly" disabled="disabled">
+                </li>
+                <li>
+                    <label>银行卡号</label>
+                    <input type="tel" placeholder="请输入银行卡号" v-model.trim="account" readonly="readonly" >
+                </li>
+
+                <li>
+                    <label>银行预留手机号</label>
+                    <input type="tel" placeholder="请输入手机号" v-model.trim="reservedMobile" maxlength="11" readonly="readonly">
+                </li>
+                <li>
+                    <label>所属银行</label>
+
+                        <div v-bind:value="bankCode" v-bind:name="bankName" style="line-height: 40px">{{bankName}}</div>
+
+                <li>
+                    <label>所属支行</label>
+                    <input type="text" placeholder="请输入所属支行" v-model.trim="bankCards.bankBranchName" readonly="readonly">
+                </li>
+            </ul>
+
+
+
+            <button class="sign_btn"  @click="signBtn" style="background: #3a9ff0" >
+                <span class="text">确 定</span>
+            </button>
+        </div>
+
+        <!-- 提示 -->
+        <div class="tips" :class="isTips? 'active':''" v-show="isTips">
+            <div class="text">{{tips}}</div>
+        </div>
+        <!--合同生成失败-->
+        <div class="error" v-show="error">
+            <img src="img/icons/contractfail.png" class="contractfail">
+            <div class="error_text">合同生成异常<br>请联系工作人员处理</div>
+        </div>
+
+        <!-- 加载中弹窗 -->
+        <div class="fail_pop load_pop" v-show="loadingPop">
+            <div class="fail_icon loading"></div>
+            <div class="fail_message"><img src="img/icons/timg.gif" width="20" style="vertical-align: sub;"> 系统处理中，请稍后...</div>
+        </div>
+
+    </div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/lib/vue-resource.js"></script>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="js/common.js"></script>
+<script src="js/bindingCardAdd-lcb.js"></script>
+</html>

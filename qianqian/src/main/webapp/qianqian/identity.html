@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body{padding:0px; margin:0px; background-color:#ffffff; position:relative; width:100%; height:100%; font-size:14px; color:#242424;}
+        html{width:100%; height:100%;}
+        select{ width:100%;}
+        table{ margin-top:0px;}
+        td{font-weight:normal; font-size:14px;}
+        #warp {height:auto; float:left; line-height:200%; padding:10px;
+        }
+        img { border:0px; padding:0px; margin:0px;}
+        ul li,ol li {list-style-type: none; text-align: left; margin:0px; padding:0px; font-size:14px;}
+        h3 { text-align:center; padding-bottom:15px;}
+        .font_g{color: #3C9FEF; font-size:14px;}
+
+        a{text-decoration: none;color: #3C9FEF; }
+        /*a:link {color: #3C9FEF; text-decoration: underline;}*/
+        a:visited {color: #3C9FEF; text-decoration: none;}
+        a:hover {color: #3C9FEF; text-decoration:none;}
+        a:active {color: #3C9FEF; text-decoration: none;}
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<div id="warp">
+    <div class="content" id="content">
+        <div v-if="page1" v-cloak>
+        <strong id="01">身份认证失败，提示“该身份证已注册”该怎么办？</strong><br />
+            请拨打客服热线<span class="font_g"><a href="tel:400-821-6888">400-821-6888</a></span>或联系您的专属客户经理。<br /><br />
+        </div>
+        <div v-if="page2" v-cloak>
+        <strong id="02">如何正确上传身份证？</strong><br />
+        您可以选择〖扫描上传〗或者〖拍照上传〗。<br />
+        方式一〖扫描上传〗：分别点击扫描人像面／点击扫描国徽面，扫描时请您将您本人身份证原件对准手机中显示的扫描框，保证您的身份证在扫描框内。确保扫描后的身份证图片清晰，四角完整；<br />
+        方式二〖拍照上传〗：点击“拍照上传"后，分别点击上传身份证人像面/上传身份证国徽面，进入拍照时请您将您本人身份证原件对准手机中显示的拍照区域，保证您的身份证在拍照区域内。确保拍照后的身份证图片清晰，四角完整。<br /><br />
+        </div>
+        <div v-if="page3" v-cloak>
+        <strong id="03">身份认证时，提示“识别信息有误，请重新识别”该怎么办？</strong><br />
+        1）请扫描您的身份证原件，确保照片清晰，四角完整。放在扫描框内进行扫描；<br />
+        2）建议您换个角度并在光线充足的环境多试几次，注意灯光反光，以免遮挡身份证信息部分；<br />
+        3）可能是设备不适配造成的，建议更换像素较高的设备。<br /><br />
+        </div>
+        <div v-if="page4" v-cloak>
+
+        <strong id="04">人脸识别失败，提示"验证超时"该怎么办？</strong><br />
+        1）检查网络是否连接正常，请在无线网络或4G网络下进行操作；<br />
+        2）若网络连接正常，则可能由于百度接口异常导致，请退出后返回，稍后再试。<br /><br />
+        </div>
+        <div v-if="page5" v-cloak>
+        <strong id="05">如何打开相机授权？</strong><br />
+        请核实是否已打开相机权限，具体打开步骤如下：<br />
+        iPhone：打开“设置”一“隐私"一“相机"找到证大前前 APP，点击进入，打开相机权限；<br />
+        vivo：进入i管家一一软件管理一软件权限管理一一找到证大前前APP一权限一拍照，在这里面开启软件允许拍照即可；<br />
+        华为：设置一权限管理一向下滑动找到〖安全防御〗栏目下的〖调用撮像头〗，找到证大前前APP，点击选择 〖允许〗字样；<br />
+        小米：安全中心一一授权管理一应用权限管理，找到证大前前APP,打开相机权限；<br />
+        三星：设定一应用程序一应用程序许可，找到证大前前 APP，勾选使用撮像头权限；<br />
+        魅族：设置一应用管理，找到证大前前APP，点击权限管理，找到拍照和录像，打开相机权限。
+        <br />
+        <img src="img/helpCenter/sf_01.png" width="100%" /><br />
+        <img src="img/helpCenter/sf_02.png" width="100%" /><br />
+        <img src="img/helpCenter/sf_03.png" width="100%" /><br />
+        <img src="img/helpCenter/sf_04.png" width="100%" /><br />
+        <br />
+        </div>
+        <div v-if="page6" v-cloak>
+        <strong id="06">是否支持使用临时身份证扫描呢？</strong><br />
+        抱歉，系统暂时不支持使用临时身份证进行申请，建议您办理本人身份证后，使用身份证原件进行申请。<br/>
+        <br/>
+        </div>
+        <div v-if="page7" v-cloak>
+        <strong id="07">为什么提示“身份证失效，请重新认证”？</strong><br />
+        此提示说明您的身份证有效期可能小于1个月，请您更换新的身份证之后继续申请即可。<br/>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/identity.js"></script>
+
+</html>

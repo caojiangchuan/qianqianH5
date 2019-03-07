@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi" user-scalable=no />
+    <title>个人中心</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/user.css">
+</head>
+
+<body>
+<div class="content" data-role="page" v-cloak="" >
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="page loading" v-show="loading"><div class="ld_gif"></div></div>
+    </transition>
+
+    <div class="page"  v-show="page1">
+
+        <header class="u_head">
+            <img src="img/user/icon1.png" class="">
+            <p>Hi,张三 <img src="img/user/icon2.png" class=""></p>
+        </header>
+
+        <ul class="u_nav">
+            <li>
+                <div class="u_nav_txt u_nav_bor">身份认证</div>
+                <p class="u_nav_p1 pa"></p>
+            </li>
+            <li>
+                <a href="selectCard.html">
+                    <div class="u_nav_txt">银行卡管理</div>
+                    <p class="u_nav_p2 pa"></p>
+                </a>
+            </li>
+            <li @click="restPsw">
+                <div class="u_nav_txt">修改密码</div>
+                <p class="u_nav_p2 pa"></p>
+            </li>
+            <li>
+                <a href="tel:4008216888">
+                    <div class="u_nav_txt">客服电话</div>
+                    <span class="u_nav_p3 pa">4008216888</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="u_sign_out">退出登录</div>
+
+    </div>
+
+    <!--修改密码-->
+    <transition enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutLeft">
+        <div class="page" v-show="page2">
+            <div class="u_rest_psw u_rest_psw1">
+                <s></s><p></p>
+                <input type="password" class="u_rtp_ipt" placeholder="请输入旧密码">
+            </div>
+            <div class="u_rest_psw">
+                <s></s><p></p>
+                <input type="password" class="u_rtp_ipt" placeholder="请输入新密码">
+            </div>
+            <div class="u_rest_psw">
+                <s></s><p></p>
+                <input type="password" class="u_rtp_ipt" placeholder="请再次输入新密码">
+            </div>
+            <div class="u_rest_btn">确 定</div>
+        </div>
+    </transition>
+
+    <!--<footer-nav post="3"></footer-nav>-->
+
+    <div id="appAlert"><div class="biao_con"></div></div>
+
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="js/lib/prefixfree.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/user.js"></script>
+</html>

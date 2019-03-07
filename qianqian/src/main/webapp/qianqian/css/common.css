@@ -1,0 +1,382 @@
+/*-----------------------------------------*/
+/****************元素样式*******************/
+/*-----------------------------------------*/
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+/** 清除内外边距 **/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+/* HTML5 媒体文件跟 img 保持一致 */
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+/* 去掉各 table cell 的边距并让其边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* IE bug fixed: th 不继承 text-align */
+th {
+    text-align: inherit;
+}
+/* 去除默认边框 */
+fieldset,
+img {
+    border: 0;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+i {
+    font-style: normal;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500;
+}
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption,
+th {
+    text-align: left;
+}
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 16px;
+}
+h3,
+h4,
+h5,
+h6 {
+    font-size: 14px;
+}
+/* 解决ie下重复最后字符 */
+q:before,
+q:after {
+    content: '';
+}
+/* 统一上标和下标 */
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,
+a {
+    text-decoration: none;
+}
+/** 设置默认字体 **/
+body,
+button,
+input,
+select,
+textarea {
+    font: 14px helvetica neue, arial, hiragino sans gb, microsoft yahei, sans-serif;
+}
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+/* 将斜体扶正 */
+code,
+kbd,
+pre,
+samp {
+    font-family: courier new, courier, monospace;
+}
+/* 统一等宽字体 */
+small {
+    font-size: 12px;
+}
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+/** 重置列表元素 **/
+ul,
+ol {
+    list-style: none;
+}
+/** 重置文本格式元素 **/
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+a:hover {
+    color: #5da1fd;
+}
+/** 清除选中状态蓝色边框 **/
+a,
+img,
+input,
+select,
+textarea {
+    outline: none;
+    border: none;
+}
+/** 定义布局方式 **/
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+input[type=submit] {
+    -webkit-appearance: none;
+}
+button{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+/* .fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: all .1s;
+  -moz-transition: all .1s;
+  -o-transition: all .1s;
+  transition: all .1s;
+} */
+
+/**************************/
+/********页面样式**********/
+/**************************/
+/*body {*/
+    /*max-width: 767px;*/
+    /*margin: 0 auto;*/
+    /*color: #444;*/
+     /*background: #fff;*/
+/*}*/
+
+[v-cloak] {
+    display: none!important;
+}
+
+.tips{
+    position:fixed;
+    bottom:50px;
+    left:50%;
+    z-index:99999;
+    line-height:17px;
+    opacity:0;
+    -webkit-transition:opacity .3s;
+    transition:opacity .3s;
+    -webkit-transform:translate(-50%,0);
+    transform:translate(-50%,0);
+}
+.tips.active{
+    opacity:.9;
+}
+.tips .text{
+    padding:10px 25px;
+    font-size:14px;
+    color:#fff;
+    text-align:center;
+    background-color:#323232;
+    border-radius:6px;
+}
+
+/** 绑定失败弹窗 **/
+.fail_pop{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 9999;
+}
+.fail_pop .fail_icon{
+    width: 225px;
+    height: 175px;
+    margin: 90px auto 60px auto;
+    background: url('../img/icons/Bindingfailure.png') no-repeat;
+    background-size: 225px 175px;
+}
+.fail_pop .fail_icon.loading{
+    width: 80px;
+    height: 80px;
+    background: url('../img/icons/loading.gif') no-repeat;
+    background-size: 80px 80px;
+}
+.fail_pop .fail_icon.next_setp{
+    width: 191px;
+    height: 190px;
+    background: url('../img/icons/confirmation.png') no-repeat;
+    background-size: 191px 190px;
+}
+.fail_pop .fail_icon.contractsuccess{
+    width: 184px;
+    height: 159px;
+    background: url('../img/icons/contractsuccess.png') no-repeat;
+    background-size: 184px 159px;
+}
+.fail_pop .fail_icon.contractfail{
+    width: 184px;
+    height: 159px;
+    background: url('../img/icons/contractfail.png') no-repeat;
+    background-size: 184px 159px;
+}
+.fail_message{
+    font-size: 17px;
+    color: #666;
+    text-align: center;
+    padding: 0 20px;
+}
+.fail_message span{
+    color: #f2424e;
+}
+.fail_btn{
+    width: 245px;
+    height: 42px;
+    text-align: center;
+    margin: 30px auto 0 auto;
+}
+.fail_btn a{
+    height: 42px;
+    line-height: 42px;
+    color: #319df2;
+    font-size: 15px;
+    border: 1px solid #319df2;
+    border-radius: 3px;
+    display: block;
+}
+.load_pop{
+    opacity: .9;
+}
+.load_pop .loading{
+    margin-top: 120px;
+}
+
+/* 退出登录 */
+.sign_out{
+    padding: 0 25px;
+    height:40px;
+    line-height: 40px;
+    font-size: 15px;
+    color: #329df2;
+    background: #fff;
+    text-align: right;
+    position: relative;
+}
+.sign_out:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    background-color: #ccc;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}

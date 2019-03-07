@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi" user-scalable=no/>
+    <title>贷款试算</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/count.css">
+</head>
+
+<body>
+<div class="content" data-role="page" v-cloak="">
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="page loading" v-show="loading">
+            <div class="ld_gif"></div>
+        </div>
+    </transition>
+
+    <div class="page count" >
+        <!--申请期限 -->
+        <ul class="ct_con">
+            <li class="clearfix">
+                <div class="fl">申请金额</div>
+                <div class="fr">
+                    <input type="num" maxlength="8"  class="ct_ipt1" pattern="\d*" placeholder="申请金额在20001-150000之间" v-model="money" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="fl">申请期限</div>
+                <div class="fr">36期</div>
+            </li>
+            <li class="clearfix">
+                <div class="fl">预计首次还款日</div>
+                <div class="fr">2016.10.01</div>
+            </li>
+        </ul>
+        <div class="ct_btn" v-on:click="make">生成试算结果</div>
+    </div>
+
+    <div class="page count2" style="display: none;">
+        <div class="ct2_tt">费率试算结果</div>
+        <div class="clearfix" style="margin-top: 38px;">
+            <p class="ct2_p1">申请金额</p>
+            <p class="ct2_p2">13000</p>
+            <p class="ct2_p3">申请期限</p>
+            <p class="ct2_p4">36</p>
+        </div>
+
+        <div class="clearfix" style="margin-top: 30px;">
+            <p class="ct2_p5">预计首次还款日</p>
+            <p class="ct2_p6">2018-06-01</p>
+        </div>
+        <div class="ct2_p7">根据上述借款信息，您的还款计划表试算结果如下：</div>
+
+        <img src="img/icons/rm_ic14.png" class="rm_ic14">
+        <div class="page">
+            <div class="ctr_ctab">
+                <table class="ctr_tab">
+                    <tr>
+                        <th>期数</th>
+                        <th>还款日</th>
+                        <th>还款金额</th>
+                        <th>当前一次性还款金额</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2018-07-27</td>
+                        <td>2018-07-27</td>
+                        <td>2018-07-27</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2018-07-27</td>
+                        <td>2018-07-27</td>
+                        <td>2018-07-27</td>
+                    </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                    <td>2018-07-27</td>
+                </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--统一提示-->
+    <div class="cue">
+        <div class="cue_con">
+            <div class="cue_c_p1">
+                <!--您无可还款银行卡，<br> 是否现在添加银行卡？-->
+            </div>
+            <div class="cue_c_p2 clearfix">
+                <div class="cue_cp2_close">取消</div>
+                <div class="cue_cp2_true">确定</div>
+            </div>
+        </div>
+    </div>
+    <!--<footer-nav post="1"></footer-nav>-->
+
+    <div id="appAlert">
+        <div class="biao_con"></div>
+    </div>
+
+</div>
+</body>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/lib/prefixfree.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/count.js"></script>
+</html>

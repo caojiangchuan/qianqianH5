@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>存管开户成功</title>
+    <meta content="app-id=518966501" name="apple-itunes-app" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <style>
+        .img_result {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+        img {
+            width: 146px;
+            height: 108px;
+        }
+        .result {
+            font-size:16px;
+            text-align: center;
+            font-family:SourceHanSansCN-Regular;
+            font-weight:400;
+            line-height: 80px;
+            color:rgba(178,178,178,1);
+        }
+        .res_btn {
+            width:180px;
+            height:40px;
+            font-size:16px;
+            text-align: center;
+            line-height: 40px;
+            font-family:SourceHanSansCN-Medium;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            background:linear-gradient(-90deg,rgba(101,181,238,1),rgba(83,172,238,1),rgba(60,159,239,1),rgba(83,172,238,1),rgba(100,181,238,1));
+            border-radius:20px;
+            margin: 0 auto;
+        }
+        .warp {
+            text-align: center;
+        }
+        .loading_style {
+            background:rgba(0,0,0,0.6);
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        [v-cloak] {
+            display: none!important;
+        }
+    </style>
+
+</head>
+<body style="margin:0px; padding:0px;">
+    <div id="warp" v-cloak>
+        <div class="loading_style" v-if="isSuccess">
+            <img src="img/icons/loading.gif" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" />
+        </div>
+        <div class="img_result" v-else>
+            <img src="img/resSuccess.png" width="100%" />
+            <div class="result">存管开户成功</div>
+            <div class="res_btn" @click="res_btn">完成</div>
+        </div>
+    </div>
+    <script src="js/lib/jquery3.2.1.min.js"></script>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-resource.js"></script>
+    <!--<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>-->
+    <!--<script>-->
+        <!--var vConsole = new VConsole();-->
+        <!--console.log('Hello world');-->
+    <!--</script>-->
+    <script src="js/common.js"></script>
+    <script src="js/result.js"></script>
+</body>
+</html>

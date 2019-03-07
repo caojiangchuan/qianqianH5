@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>还款服务</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="../css/com.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="css/checkCode.css">
+    <script src="../js/lib/jquery3.2.1.min.js"></script>
+
+
+
+</head>
+<body>
+<div id="app">
+<h1 class="writeCode">填写还款校验码</h1>
+
+
+    <security-code @input="input">
+
+
+    </security-code>
+
+    <div class="check-next"  @click="next">确定</div>
+    <div id="appAlert" ><div class="biao_con biao_con2" ></div></div>
+<!--loading-->
+    <div v-show="loading" class="loading">
+    <div style=" width: 136px;height: 122px; margin: 200px auto"><img src="img/icons/loading.gif" height="122" width="136"/></div>
+    </div>
+</div>
+</body>
+<script src="../js/lib/vue.js"></script>
+<!--<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>-->
+<!--<script>-->
+    <!--var vConsole = new VConsole();-->
+    <!--console.log('Hello world');-->
+    <!--if(window.name != "http://10.8.30.34:8080/CustomerCreditFront/qianqian/compensatory/checkCode.html"){-->
+        <!--location.reload();-->
+        <!--window.name = "http://10.8.30.34:8080/CustomerCreditFront/qianqian/compensatory/checkCode.html";-->
+    <!--}else{-->
+        <!--window.name = "";-->
+    <!--}-->
+<!--</script>-->
+<script src="js/checkCode.js"></script>
+<script src="js/com.js"></script>
+
+<!--&lt;!&ndash;<script src="js/lib/vue-resource.js"></script>&ndash;&gt;-->
+<!--<script src="../js/lib/vconsole.min.js"></script>-->
+<!--&lt;!&ndash;<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>&ndash;&gt;-->
+<!--<script src="../js/common.js"></script>-->
+
+</html>

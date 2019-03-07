@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body{padding:0px; margin:0px; background-color:#ffffff; position:relative; width:100%; height:100%; font-size:14px; color:#242424;}
+        html{width:100%; height:100%;}
+        select{ width:100%;}
+        table{ margin-top:0px;}
+        td{font-weight:normal; font-size:14px;}
+        #warp {height:auto; float:left; line-height:200%; padding:10px;
+        }
+        img { border:0px; padding:0px; margin:0px;}
+        ul li,ol li {list-style-type: none; text-align: left; margin:0px; padding:0px; font-size:14px;}
+        h3 { text-align:center; padding-bottom:15px;}
+        .font_g{color: #3C9FEF; font-size:14px;}
+
+        a{text-decoration: none;color: #3C9FEF; }
+        /*a:link {color: #3C9FEF; text-decoration: underline;}*/
+        a:visited {color: #3C9FEF; text-decoration: none;}
+        a:hover {color: #3C9FEF; text-decoration:none;}
+        a:active {color: #3C9FEF; text-decoration: none;}
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<div id="warp">
+    <div class="content" id="content">
+        <div v-if="page1" v-cloak>
+        <strong id="01">如何获取征信报告？</strong><br />
+        注册并登录“中国人民银行征信中心”官网（<a href="https://ipcrs.pbccrc.org.cn/">https://ipcrs.pbccrc.org.cn/</a>），选择“问题验证”、“银行卡验证”或“数字证书验证”，您在选择验证方式并提交申请的24小时后，人行征信中心会向您发送含有身份验证码的短信。您可以在收到身份验证码的7天内，返回官网填写并提交、完成征信授权。若获取不到征信验证码，建议联系人行征信客服电话：<span class="font_g">400-810-8866</span>。<br />
+        <img src="img/helpCenter/zx_01.png" width="100%" /><br />
+        <img src="img/helpCenter/zx_02.png" width="100%" /><br /><br />
+        </div>
+            <div v-if="page2" v-cloak>
+        <strong id="02">为什么收不到征信身份验证码？</strong><br />
+        正常情况下，会在您提交查询申请的24个小时后，将身份验证码反馈给您。若您在申请查询24个小时后仍未收到反馈结果，可能是由于以下原因：一是您注册时填写的手机号码不正确；二是您的手机对短信进行了拦截，或短信接受出现异常；三是您在提交查询申请时，使用问题验证方式，经审核您未通过身份验证。您可以用注册时填写的登录名和密码登陆人行征信中心（<a href="https://ipcrs.pbccrc.org.cn/">https://ipcrs.pbccrc.org.cn/</a>）平台会显示您的信用信息产品处理状态。<br />
+<br />
+        </div>
+        <div v-if="page3" v-cloak>
+        <strong id="03">忘记征信账号或密码怎么办？</strong><br />
+        如果您忘记征信账号，请登录人行征信中心<a href="https://ipcrs.pbccrc.org.cn/">https://ipcrs.pbccrc.org.cn/</a>，点击 【找回登录名】按照提示进行找回。
+    </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/creditReport.js"></script>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi" user-scalable=no/>
+    <!--<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />-->
+    <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>暖春乐惠</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="css/com.css">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/oldRepay.css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+  </head>
+
+<body style="overflow: hidden;">
+<div class="content" data-role="page" v-cloak style="  transform-origin: top left;">
+        <div class="page loading">
+            <div class="ld_gif"></div>
+        </div>
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="page page1 swiper-container" v-show="page.page1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img   :src="typeImgUrl">
+                    <div class="pa p1_btn" @touchstart="p1_btn" ></div>
+                </div>
+
+            </div>
+
+            <!--<img src="img/active/ic1.png" class="pa p1_ic_time p1_ic1">-->
+            <!--<img src="img/active/ic2.png" class="pa p1_ic_time p1_ic2">-->
+            <!--<img src="img/active/ic3.png" class="pa p1_ic_time p1_ic3">-->
+            <!--<img src="img/active/ic4.png" class="pa p1_ic_time p1_ic4">-->
+            <!--<img src="img/active/ic5.png" class="pa p1_ic_time p1_ic5">-->
+            <!--<img src="img/active/ic6.png" class="pa p1_ic_time p1_ic6">-->
+            <!--<img :src="typeImgUrl" class="pa p1_ic_time text1">-->
+
+            <!--<img src="img/active/btn.png" class="pa p1_btn  tada animated" @click="p1_btn">-->
+        </div>
+    </transition>
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="page page2" v-show="page.page2" style="background: #f5f5f5;">
+            <ul class="p2_con">
+                <li class="p2c_li1">
+                    <div class="p2_tit clearfix">
+                        <span class="s1">{{dataOldRepay.oldProductName}} </span>
+                        <span class="s2">共{{dataOldRepay.oldTotalTime}}期</span>
+                        <span class="s2">（已还{{dataOldRepay.oldRepayTime}}期）</span>
+                        <!--<a class="s4">合同1</a>-->
+                    </div>
+                    <div class="p2_time1">
+                        <s></s>
+                        <span class="s1">首期还款日</span>
+                        <span class="s2">{{dataOldRepay.oldFirstRepaymentDay}}</span>
+                    </div>
+
+                    <div class="p2_time2">
+                        <s></s>
+                        <span class="s1">最后还款日</span>
+                        <span class="s2">{{dataOldRepay.oldLastRepaymentDay}}</span>
+                    </div>
+                </li>
+                <template v-if="joinType=='活动二'">
+                    <li class="p2c_li2">
+                        <div class="clearfix">
+                            <img src="img/icons/oldRepay_icon3.png" class="oldRepay_icon3">
+                        </div>
+                        <!--<p class="p2_li2_p1">合同1/合同2</p>-->
+                        <div class="p2_li2_tit clearfix">
+                            <p class="p1">每期还款额</p>
+                            <p class="p2">¥{{dataOldRepay.oldEverTimeRepayMoney}}</p>
+                            <p class="p3">¥{{dataOldRepay.everTimeRepayMoney}}</p>
+                        </div>
+                        <div class="p2_li2_tit clearfix">
+                            <p class="p1">剩余还款额</p>
+                            <p class="p2">¥{{dataOldRepay.oldResidueRepayMoney}}</p>
+                            <p class="p3">¥{{dataOldRepay.residueRepayMoney}}</p>
+                        </div>
+                        <div class="p2_li2_tit clearfix">
+                            <p class="p1">剩余还款期数</p>
+                            <p class="p2">{{dataOldRepay.oldResidueRepayTime}}期</p>
+                            <p class="p3">{{dataOldRepay.residueRepayTime}}期</p>
+                        </div>
+                    </li>
+
+                    <li class="p2c_li3">
+
+                        <div class="p2c_li3_c1 clearfix">
+                            <span class="s1">延长期数：</span>&nbsp;
+                            <span class="s2">{{Math.abs(dataOldRepay.residueRepayTime-dataOldRepay.oldResidueRepayTime)}}期</span>
+                        </div>
+                        <div class="p2c_li3_c1 clearfix">
+                            <span class="s1">每期还款额降低：</span>&nbsp;
+                            <span class="s2">¥{{(Math.abs(dataOldRepay.oldEverTimeRepayMoney-dataOldRepay.everTimeRepayMoney).toFixed(2))}}</span>
+                        </div>
+
+                        <!--<div class="p2c_li3_c2">-->
+                            <!--活动指定借款计划结清后，剩余金额会用于新的借款合同，不得挪做他用。-->
+                        <!--</div>-->
+
+                    </li>
+                </template>
+
+                <template v-else>
+                    <li class="p2c_li2">
+                        <div class="clearfix">
+                            <img src="img/icons/oldRepay_icon3.png" class="oldRepay_icon3">
+                        </div>
+                        <!--<p class="p2_li2_p1">合同1/合同2</p>-->
+                        <div class="p2_li2_tit clearfix">
+                            <p class="p1">剩余还款额</p>
+                            <p class="p2">¥{{dataOldRepay.oldResidueRepayMoney}}</p>
+                            <p class="p3">¥{{dataOldRepay.residueRepayMoney}}</p>
+                        </div>
+                        <div class="p2_li2_tit clearfix">
+                            <p class="p1">剩余还款期数</p>
+                            <p class="p2">{{dataOldRepay.oldResidueRepayTime}}期</p>
+                            <p class="p3">{{dataOldRepay.residueRepayTime}}期</p>
+                        </div>
+                        <div class="p2_li2_tit clearfix">
+                            <p class="p1">每期还款额</p>
+                            <p class="p2">¥{{dataOldRepay.oldEverTimeRepayMoney}}</p>
+                            <p class="p3">¥{{dataOldRepay.everTimeRepayMoney}}</p>
+                        </div>
+                    </li>
+
+                    <li class="p2c_li3">
+
+                        <div class="p2c_li3_c1 clearfix">
+                            <span class="s1">总计减免金额：</span>&nbsp;
+                            <span class="s2">¥{{(Math.abs(dataOldRepay.oldResidueRepayMoney-dataOldRepay.residueRepayMoney).toFixed(2))}}</span>
+                        </div>
+
+                        <!--<div class="p2c_li3_c2">-->
+                            <!--活动指定借款计划结清后，剩余金额会用于新的借款合同，不得挪做他用。-->
+                        <!--</div>-->
+                    </li>
+
+                </template>
+
+
+            </ul>
+            <div class="oldRepayBtn" @click="oldRepayBtn">确认参与</div>
+            <p class="p2_rule">本次活动由上海证大投资咨询有限公司及上海证大爱特金融信息服务有限公司联合主办<br>
+                最终解释权归上海证大投资咨询有限公司所有</p>
+        </div>
+    </transition>
+
+    <div id="appAlert">
+        <div class="biao_con"></div>
+    </div>
+
+    <div id="appAlert2">
+        <div class="appAl_con">
+            <div class="appAl_text" v-html="appAl_text"></div>
+            <div class="appAl_btn" @click="appAl_btn">确定</div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/swiper-3.4.2.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/lib/md5.js" type="text/javascript"></script>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="js/lib/prefixfree.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="js/common.js"></script>
+<script src="js/oldRepay.js?v=0.001"></script>
+
+<script>
+//    var vConsole = new VConsole();
+//    console.log('Hello world');
+</script>
+</html>

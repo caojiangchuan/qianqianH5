@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi" user-scalable=no/>
+    <title>消息中心</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/message.css">
+</head>
+
+<body>
+<div class="content" data-role="page" v-cloak="">
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="page loading" v-show="loading">
+            <div class="ld_gif"></div>
+        </div>
+    </transition>
+
+    <div class="page msg">
+
+        <div class="msg_head clearfix">
+            <div class="msg_hd_le fl active">消息</div>
+            <div class="msg_hd_ri fr">公告</div>
+        </div>
+        <ul class="msg_con">
+            <li class="clearfix">
+                <s class="msg_c_s"></s>
+                <p class="msg_c_p1">您的申请已提交，稍后会有我司客.稍后会有我司客</p>
+                <p class="msg_c_p2">2018.04.20</p>
+                <p class="msg_c_p3"></p>
+            </li>
+            <li class="clearfix">
+                <s class="msg_c_s"></s>
+                <p class="msg_c_p1">您的申请已提交，稍后会有我司客稍后会有我司客.</p>
+                <p class="msg_c_p2">2018.04.20</p>
+                <p class="msg_c_p3"></p>
+            </li>
+        </ul>
+
+    </div>
+
+    <!--统一提示-->
+    <div class="cue">
+        <div class="cue_con">
+            <div class="cue_c_p1">
+                <!--您无可还款银行卡，<br> 是否现在添加银行卡？-->
+            </div>
+            <div class="cue_c_p2 clearfix">
+                <div class="cue_cp2_close">取消</div>
+                <div class="cue_cp2_true">确定</div>
+            </div>
+        </div>
+    </div>
+    <!--<footer-nav post="1"></footer-nav>-->
+
+    <div id="appAlert">
+        <div class="biao_con"></div>
+    </div>
+
+</div>
+</body>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/lib/prefixfree.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/message.js"></script>
+</html>

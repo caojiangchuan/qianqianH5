@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>合同签约</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="css/photoswipe.css"/>
+    <link rel="stylesheet" href="css/default-skin.css"/>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="img_list">
+            <div class="demo-gallery">
+                <a href="#"><img id="img1" v-bind:src="selectMenuText" /></a>
+            </div>
+        </div>
+
+        <!-- 上拉菜单 -->
+        <div class="more_files">
+            <div class="file_title" @click="showToggle">更多文件
+                <span :class="isShow? 'arrow':'arrow_down'"></span>
+            </div>
+            <transition name="fade">
+            <ul v-show="isShow">
+                <li v-for="(item, index) in moreFiles.attachment" v-bind:value=item.fileNum :class="{active:index==moreFilesActive}" @click="filesOpen(index, item.contractTypeDic,item.fileNum)">{{item.contractTypeDic}}</li>
+            </ul>
+            </transition>
+        </div>
+
+        <!-- 下拉菜单 -->
+        <div class="sign_block">
+            <div class="sign_title" @click="showSignBlock">
+                <!--<p>-->
+                    <!--<span :class="isSignShow? 'active':''"></span>-->
+                <!--</p>-->
+            </div>
+            <div class="sign_body" v-show="isSignShow">
+                <button class="sign_btn" :class="btnActive? 'active':''" @click="signBtn"  style="background: #3a9ff0;">
+                    <span></span>
+                    <span class="text">签 名</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 透明遮罩层 -->
+        <div class="mask" v-show="isMask" @click="showMask"></div>
+        <!-- 灰色遮罩层 -->
+        <div class="mask grey" v-show="isMaskGrey"></div>
+
+        <!-- 查看授权书 -->
+        <div class="reply_view">
+            <div class="view_book reply_container">
+                <div class="view_title">电子签章授权委托书</div>
+                <div class="view_body reply_list" id="tcWrapper">
+                    <div>
+                        <span class="span_w">委托人（姓名）：{{moreFiles.name}}</span><br>
+                        身份证号码：{{moreFiles.idNum}}<br><br>
+                        
+                        <span class="span_w">受托人：上海证大投资咨询有限公司（以下简称公司）</span><br>
+                        住所地：上海市浦东新区牡丹路60号10-11层<br><br>
+                        
+                        委托人因<span class="span_x">借款咨询服务</span>一事，现授权受托人作为其代理人，具体授权内容如下：<br><br>
+                        
+                        <span class="span_w">一、授权事项和权限：</span><br>
+                        1、为确保交易安全，委托人同意使用深圳市电子商务安全证书管理有限公司提供的数字证书完成<span class="span_x">借款咨询服务</span>一事中相关的交易文件签署及交易行为确认，委托人知悉并授权受托人将委托人相关信息提交至深圳法大大网络科技有限公司代为申请专属于用户的数字证书，该数字证书将会被作为完成委托人在<span class="span_x">公司</span>平台在线签署电子合同等法律文本之目的使用。<br>
+                        2、受托人有权使用委托人的专属数字证书以委托人的名义在<span class="span_x">公司</span><span v-for="(item, index) in moreFiles.attachment">《{{item.contractTypeDic}}》<em v-if="index < moreFiles.attachment.length-1">、</em></span>等全部协议的签署。
+                        <br><br>
+                        <span class="span_w">二、授权期限：</span><br>
+                        本授权委托书自委托人签署时生效，除委托人作出书面相反意思表示外，本授权委托书之授权期限与《出借咨询与服务协议》（编号：{{moreFiles.appNo}}  ）期限一致
+                        <br><br>
+                        <span class="span_w">三、本授权委托书经委托人在<span class="span_x">公司</span>平台以网络在线点击确认的方式签署。</span><br><br>
+                        
+                        <span class="span_w" style="text-align:right; display:block;">委托人：{{moreFiles.name}}</span>
+                        <span class="span_w" style="text-align:right; display:block;">签署日期：{{moreFiles.date}}</span>
+                    </div>
+                </div>
+                <div class="view_btn close_reply" @click="viewBtn">确认</div>
+            </div>
+        </div>
+
+        <!-- 提示 -->
+        <div class="tips" :class="isTips? 'active':''" v-show="isTips">
+            <div class="text">{{tips}}</div>
+        </div>
+
+        <!-- 绑定弹窗 -->
+        <div class="fail_pop" v-show="failPop">
+            <div class="fail_icon" :class="failIconClass"></div>
+            <div class="fail_message" v-html="failMessage"></div>
+            <div class="fail_btn">
+                <a href="javascript:void(0)" @click="nextSetp" v-show="isNextSetpBtn">完成后前往下一步</a>
+                <a href="javascript:void(0)" @click="closeBtn" v-show="isCloseBtn">关闭</a>
+            </div>
+        </div>
+
+        <!-- 加载中弹窗 -->
+        <div class="fail_pop load_pop" v-show="loadingPop">
+            <div class="fail_icon loading"></div>
+            <div class="fail_message"><img src="img/icons/timg.gif" width="20" style="vertical-align: sub;"> 系统处理中，请稍后...</div>
+        </div>
+
+    </div>    
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/lib/vue-resource.js"></script>
+<script src="js/lib/vconsole.min.js"></script>
+<script src="js/lib/photoswipe.min.js"></script>
+<script src="js/lib/photoswipe-ui-default.min.js"></script>
+<script src="js/lib/iscroll.js"></script>
+<!--<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>-->
+<script src="js/common.js"></script>
+<script src="js/custom-lcb.js"></script>
+</html>

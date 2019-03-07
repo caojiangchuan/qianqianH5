@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>添加银行卡</title>
+    <link rel="shortcut icon" href="#" />
+
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="css/addCardMessage.css">
+    <link rel="stylesheet" href="css/repayment-dc.css">
+    <script src="../js/lib/jquery3.2.1.min.js"></script>
+</head>
+<style>
+    #appAlert{ position:fixed;width:100%; left:0px; text-align:center; display:none; bottom:300px; z-index:999;-webkit-animation-duration:.8s;animation-duration:.8s;}
+    .biao_con{ display:inline-block;  color:#fff; background:rgba(0,0,0,.8); padding:20px 50px ;  border:#000 solid 1px; border-radius:50px;    font-size: 30px;  line-height: 30px; max-width: 80%;}
+    .biao_con2{ padding: 5px 20px; font-size: 13px; line-height: 25px; }
+    /*.ld_gif{ width: 160px; height: 160px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; z-index: 999; }*/
+    /*.ld_gif img{ width: 100%; height: 100%;}*/
+    /*.loading{z-index: 999;}*/
+     /*!*input{ border: none}*!*/
+    /*input:focus { outline: none; }*/
+    /*input{*/
+        /*-webkit-tap-highlight-color: rgba(255, 255, 255, 0);*/
+        /*-webkit-user-select: none;*/
+        /*-moz-user-focus: none;*/
+        /*-moz-user-select: none;*/
+        /*-webkit-appearance:none;*/
+        /*outline: none;*/
+        /*border: none;*/
+    /*}*/
+</style>
+<body >
+<div id="app">
+
+     <div class="add-all" >
+    <p class="CardTip">请绑定持卡人本人的银行卡</p>
+    <div class="card-message">
+        <div class="list-money card-com"><span class="list-left">持卡人</span><span class="list-right list-chooseMoney"><input @focus="inputTop"  @blur="inputOnBlur"  v-model.trim="name"  class="money" placeholder="请输入姓名" maxlength="20"></span></div>
+        <!--<div class="list-money card-com"><span class="list-left">身份证号</span><span class="list-right list-chooseMoney long"><input  @blur="inputOnBlur" v-model.trim="idcard"  type="text" class="money" placeholder="请输入身份证号" @input="idInput" onkeyup="this.value=this.value.replace(/[^\d\u0058]/g,'');"></span></div>-->
+        <div class="list-money card-com"><span class="list-left">身份证号</span><span class="list-right list-chooseMoney long"><input  @blur="inputOnBlur" v-model.trim="idcard" type="text"   class="money" @input="idInput" placeholder="请输入身份证号"  ></span></div>
+
+        <div class="list-cardName card-com"><span class="list-left">卡号</span><span class="list-right list-chooseMoney long"><input  @blur="inputOnBlur"  v-model.trim="bankCard" maxlength="23"   class="money" placeholder="请输入银行卡号" pattern="\d*" type='tel' onkeyup="this.value=this.value.replace(/\D/g,'').replace(/....(?!$)/g,'$& ')"></span></div>
+        <div class="list-cardNum card-com" style="position:relative">
+            <span class="list-left">所属银行</span>
+            <input class="list-right list-chooseMoney first-ul" style="border: 0px; background: none;color: #808080" @click="choose" v-model.trim="chooseBankName" @blur="hideInput" readonly>
+
+            <ul class="ul-all"  v-if="bankChoose">
+
+                    <li v-cloak v-for="(bankName, index) in bankList" :data-index='index'  class="all-Li"  @click="chooseBank(bankName)"> {{ bankName.bankName }}</li>
+
+            </ul>
+        </div>
+        <div class="list-Name card-com"><span class="list-left">所属支行</span><span class="list-right"><input   class="money" placeholder="请输入所属支行" v-model.trim="bankDev"  @blur="inputOnBlur" maxlength="20" ></span></div>
+        <div class="list-idCard card-com"><span class="list-left list-left2">银行预留手机号</span><span class="list-right list-left2"><input  pattern="\d*" type='tel' class="money" placeholder="电话号码" v-model.trim="phone" maxlength="11"  @blur="inputOnBlur" @focus="anzhuo" ref="abc" @change="jianpan"></span></div>
+
+        <div class="list-idCard card-com" style="border-bottom: none"><span class="list-left list-left2"><input class="writeCode" v-model.trim="code"  pattern="\d*" placeholder="请输入短信验证码" maxlength="6" type='tel'   @blur="inputOnBlur" onkeyup="this.value=this.value.replace(/\D/g,'')"></span><span class="list-right getCode"  @click="getCode" v-show="show">{{this.get}}</span><span v-show="!show" class="list-right getCode2" >{{count}}s</span></div>
+
+    </div>
+
+    <div class="sure" @click="binding">确定</div>
+    <div id="appAlert" ><div class="biao_con biao_con2" ></div></div>
+</div>
+    <!--loading-->
+    <div v-show="loading" class="loading">
+        <div style=" width: 136px;height: 122px; margin: 200px auto"><img src="img/icons/loading.gif" height="122" width="136"/></div>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+            //这个是安卓操作系统\
+            dynamicLoadCss('../css/anzhuo.css')
+
+        }
+        if (isIOS) {
+            //这个是ios操作系统
+            dynamicLoadCss('../css/common.css')
+            dynamicLoadCss('../css/com.css')
+        }
+    });
+
+    function dynamicLoadCss(url) {
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.type='text/css';
+        link.rel = 'stylesheet';
+        link.href = url;
+        head.appendChild(link);
+    }
+</script>
+<script src="../js/lib/vue.js"></script>
+<script src="js/addCardMessage.js"></script>
+<script src="js/com.js"></script>
+</html>

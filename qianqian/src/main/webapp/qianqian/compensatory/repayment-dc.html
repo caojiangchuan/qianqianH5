@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>还款服务</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="../css/com.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="css/repayment-dc.css">
+    <script src="../js/lib/jquery3.2.1.min.js"></script>
+</head>
+<body>
+<div id="app">
+<div class="card-message" v-cloak>
+    <div class="list-lendName card-com"><span class="list-left">{{lendName}}</span><span class="list-left lendIdcard"  >{{lendId | lendId}}</span><span class="list-right list-img" v-if="state"><img src="../img/outtime.png"></span></div>
+    <!--<div class="list-money card-com"><span class="list-left">还款金额</span><span class="list-right list-chooseMoney" style="margin-left: 5px">元</span><span class="list-right list-chooseMoney"><input    oninput='this.value=this.value.replace(/^[0]+[0-9]*$/gi,"")'  v-model.trim="backMoney" type="number" class="money"  @input="inputFun" ></span></div>-->
+    <div class="list-money card-com"><span class="list-left">还款金额</span><span class="list-right list-chooseMoney" style="margin-left: 5px">元</span><span class="list-right list-chooseMoney"><input   onkeypress="if((event.keyCode<48 || event.keyCode>57) && event.keyCode!=46 || /\.\d\d{2}$/.test(value))event.returnValue=false"  v-model.trim="backMoney" type="number" class="money"  @input="inputFun" ></span></div>
+    <div class="list-cardName card-com" @click="goList"><span class="list-left" >选择银行卡</span><span class="list-right">{{bank}}</span></div>
+    <div class="list-cardNum card-com"><span class="list-left">银行卡号</span><span class="list-right">{{bankNo | bankNo }}</span></div>
+    <div class="list-Name card-com"><span class="list-left">真实姓名</span><span class="list-right">{{backName}}</span></div>
+    <div class="list-idCard card-com"><span class="list-left">身份证号</span><span class="list-right">{{backId  | backId}}</span></div>
+    <div class="list-tel card-com"><span class="list-left">银行预留手机号</span><span class="list-right" >{{phone | phone }}</span></div>
+</div>
+    <div class="backMoney" @click="sure">还款卡确认</div>
+    <div v-if="seen" class="wait">
+        <!--<div class="wait-tip"  v-if="outTime"><p>还款次数已达上限，请更换银行卡</p><p @click="closeWait">确认</p></div>-->
+        <div class=" wait-tip2" v-if="outTime" v-cloak><p>还款金额{{this.backMoney}}元</p><p> 点击确认后发起还款</p><p><span class="cancel" @click="cancel">取消</span><span class="sure" @click="gopay">确定</span></p></div>
+    </div>
+    <div id="appAlert" ><div class="biao_con biao_con2" ></div></div>
+    <div v-show="loading" class="loading">
+
+    </div>
+
+    <!--loading-->
+    <div v-show="loading" class="loading">
+        <div style=" width: 136px;height: 122px; margin: 200px auto"><img src="img/icons/loading.gif" height="122" width="136"/></div>
+    </div>
+</div>
+
+
+</body>
+<script src="../js/lib/vue.js"></script>
+<!--<script src="..js/lib/vconsole.min.js"></script>-->
+<!--<script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script>-->
+<!--<script>-->
+    <!--var vConsole = new VConsole();-->
+    <!--console.log('Hello world');-->
+<!--</script>-->
+<script src="js/repayment-dc.js"></script>
+<script src="js/com.js"></script>
+
+</html>

@@ -1,0 +1,19 @@
+.CardTip{ color: #808080; font-size: 15px;margin-left: 20px;    margin-top: 20px;}
+.card-message{ width: 90%; height: 343px; margin: 0 auto;background:rgba(255,255,255,1);    box-shadow:0px 1px 10px 2px rgba(205,205,205,1);
+    border-radius:6px; margin-top: 20px; padding: 0 10px}
+.card-com{ height: 49px; width: 100%;border-bottom:1px solid #E6E6E6; color:rgba(35,35,35,1);; font-size: 16px; line-height: 49px;font-weight:400;}
+.sure{ width: 180px; height: 40px;  margin: 0 auto;background:linear-gradient(-90deg,rgba(127,194,242,1),rgba(60,159,239,1));
+    box-shadow:0px 3px 5px 0px rgba(66,206,230,0.49);border-radius:20px; text-align: center;line-height: 40px; color: #FFFFFF;font-size: 16px; margin-top: 50px}
+.getCode{ color: #3A9FF0 !important; position: relative;}
+.getCode2{ color: #808080 !important; position: relative;}
+.getCode:after,.getCode2:after{position: absolute;content: ''; width: 2px; height: 17px; background: #CCCCCC;    left: -20px;    top: 16px; }
+.writeCode{ font-size: 16px !important; width: 100%; border: 1px solid white}
+.money{color: #808080 !important;border:1px solid white}
+.long{width: 72% !important;}
+.list-left2{ width: 50% !important;}
+/*.add-all{ width: 100%; height: 100%; position: relative;  z-index: 100; overflow: scroll }*/
+.first-Li{ height: 100%; line-height: 45px;}
+.all-Li{ width: 100%; height: 30px; line-height: 30px; text-align: center; }
+.first-ul{ position: relative}
+.include-li{position: absolute; top:48px;z-index: 1000000; background: white;border: 1px solid black; width: 100%; }
+.ul-all{border: 0px; color: #808080;position: absolute;top: 45px;right: 0; z-index: 10000; background: white; border: 1px solid  #808080; padding: 0 5px; overflow-y:auto; overflow-x:hidden; max-height:150px;}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi" user-scalable=no/>
+    <title>首页</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+<div class="content" data-role="page" v-cloak="">
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="page loading" v-show="loading">
+            <div class="ld_gif"></div>
+        </div>
+    </transition>
+
+    <div class="page">
+        <!--banner-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/index/banner.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/index/banner.png">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <ul class="idx_nav1">
+            <li>
+                <a href="javascript:;" onclick="alert('暂未开放')">
+                    <img src="img/index/icon1.png">
+                    <p>借款进度</p>
+                </a>
+            </li>
+            <li>
+                <a href="message.html">
+                    <img src="img/index/icon2.png">
+                    <p>消息管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="count.html">
+                    <img src="img/index/icon3.png">
+                    <p>费率计算</p>
+                </a>
+            </li>
+        </ul>
+
+        <!--<a href="javacsript:;" class="loan" onclick="alert('暂未开放')">-->
+        <!--<img src="img/index/icon4.png" class="loan_img1">-->
+        <!--<span class="loan_sp">我要借款</span>-->
+        <!--<img src="img/index/icon5.png" class="loan_img2">-->
+        <!--</a>-->
+        <img src="img/index/banner2.png" class="banner2">
+        <img src="img/index/banner3.jpg" class="banner3">
+
+    </div>
+
+    <!--<footer-nav post="1"></footer-nav>-->
+
+    <div id="appAlert">
+        <div class="biao_con"></div>
+    </div>
+
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<!--<script src="js/lib/vconsole.min.js"></script>-->
+<script src="js/lib/prefixfree.min.js"></script>
+<script type="text/javascript" src="js/lib/swiper-4.3.3.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+</html>

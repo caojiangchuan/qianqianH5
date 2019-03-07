@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body{padding:0px; margin:0px; background-color:#ffffff; position:relative; width:100%; height:100%; font-size:14px; color:#242424;}
+        html{width:100%; height:100%;}
+        select{ width:100%;}
+        table{ margin-top:0px;}
+        td{font-weight:normal; font-size:14px;}
+        #warp {height:auto; float:left; line-height:200%; padding:10px;
+        }
+        img { border:0px; padding:0px; margin:0px;}
+        ul li,ol li {list-style-type: none; text-align: left; margin:0px; padding:0px; font-size:14px;}
+        h3 { text-align:center; padding-bottom:15px;}
+        .font_g{color: #3C9FEF; font-size:14px;}
+
+        a{text-decoration: none;color: #3C9FEF; }
+        /*a:link {color: #3C9FEF; text-decoration: underline;}*/
+        a:visited {color: #3C9FEF; text-decoration: none;}
+        a:hover {color: #3C9FEF; text-decoration:none;}
+        a:active {color: #3C9FEF; text-decoration: none;}
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<div id="warp">
+    <div class="content" id="content">
+        <div v-if="page1" v-cloak>
+        <strong id="01">目前支持绑定哪些银行卡？</strong><br />
+        您在绑定银行卡环节可选择：中国建设银行、中国光大银行、中国工商银行、中国银行、兴业银行、上海浦东发展银行、中国农业银行、广发银行、平安银行、上海银行、民生银行的储蓄卡进行绑定。<br /><br />
+        </div>
+        <div v-if="page2" v-cloak>
+        <strong id="02">什么是银行预留手机号？如何变更？</strong><br />
+        银行预留手机号是您办理银行卡相关业务时在银行登记的手机号，如果您的银行预留手机号已不再使用，或由于其他原因需要变更，可携带身份证及银行卡前往附近银行柜台在工作人员协助下进行修改。<br /><br />
+        </div>
+        <div v-if="page3" v-cloak>
+        <strong id="03">如何区分银行卡Ⅰ类 Ⅱ类 Ⅲ类账户？</strong><br />
+        若您绑卡失败，请致电发卡银行客服确认您的银行卡账户类型，如您已了解银行卡使用功能，请按照以下提示进行分类：<br />
+        Ⅰ类账户是一个全功能的银行账户（借记卡）<br />
+        Ⅱ类账户不能存款、支取现金、向非绑定账户转账，且单日支付限额1万元；<br />
+        Ⅲ类账户余额不得超过1000，适合小额高频交易。<br /><br />
+        </div>
+        <div v-if="page4" v-cloak>
+        <strong id="04">绑定银行卡失败怎么办？</strong><br />
+        1）请确认银行卡为本人所有，并确保银行卡信息正确；<br />
+        2）目前仅支持绑定储蓄卡，不支持绑定信用卡；<br />
+        3）请核实填写的银行预留手机号是否正确，如不正确建议致电发卡行客服咨询；<br />
+        4）更换其他银行卡再次尝试。<br /><br />
+        </div>
+        <div v-if="page5" v-cloak>
+        <strong id="05">银行卡遗失或变更银行卡，如何操作？</strong><br />
+        1）点击【个人中心】，选择【银行卡管理】，再点击【添加银行卡】，进行新卡绑定。<br />
+        2）点击【我要还款】，在选择还款银行卡界面，点击【添加银行卡】，进行新卡绑定。“证大前前”APP只支持新增银行卡，不可删除已绑定银行卡。<br />
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="js/lib/jquery3.2.1.min.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/bankCard.js"></script>
+</html>

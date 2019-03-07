@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>快速认证</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/quickmake.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/lib/jquery3.2.1.min.js"></script>
+</head>
+<body>
+<div id="app" >
+    <header class="head">
+
+        <div class="logo">
+            <img src="img/auth-logo.png" width="100%">
+        </div>
+    </header>
+    <div class="number"><p v-cloak>{{ phone }}</p></div>
+    <div class="send"><input type="text" pattern="\d*" maxlength="4" oninput="this.value=this.value.replace(/[^0-9]/g,'');" class="get" v-model.trim="num" id="inpu" placeholder="请输入您收到的短信验证码"></div>
+
+
+   <div class="getCode"><span v-show="show" @click="getCode">获取短信验证码</span><span v-if="!show" v-cloak>({{count}}s)</span></div>
+    <div class="login-btn" v-on:click="sign">快速认证</div>
+    <div class="check-proc"><p @click="Gocheck" style="width: 13px; height: 13px;"><span v-show="check" ><img src="img/check-white.png"></span><span v-cloak v-show="!check"><img src="img/check-finish.png"></span></p><p class="check-font">您已确认阅读并同意<a style="color: #3C9FEF" href="https://www.laocaibao.com/credit/contract/registerContract">《捞财宝协议》</a>,在点击快速绑定后会将您的信息与捞财宝进行同步。</p></div>
+
+    <div class="fail_pop load_pop" v-show="loadingPop">
+        <div class="fail_icon loading"></div>
+        <div class="fail_message"><img src="img/icons/timg.gif" width="20" style="vertical-align: sub;"> 系统处理中，请稍后...</div>
+    </div>
+
+
+    <div id="appAlert" ><div class="biao_con biao_con2" ></div></div>
+
+</div>
+</body>
+
+<script src="js/lib/vue.js"></script>
+<!--<script src="js/lib/vue-resource.js"></script>-->
+<script src="js/lib/vconsole.min.js"></script>
+
+<!--<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>-->
+<script src="js/common.js"></script>
+<script src="js/authentication.js"></script>
+</html>

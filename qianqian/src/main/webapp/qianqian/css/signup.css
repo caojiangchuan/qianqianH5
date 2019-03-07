@@ -1,0 +1,73 @@
+.user_head{ margin: 135px auto 40px auto; display: block; width: 180px;}
+.user_name{ text-align: center; color: #fff; font-size: 32px; line-height: 100%;}
+.text{ width: 493px; height: 90px; background: none; border: #3a9ff0 solid 1px; border-radius: 8px; line-height: 90px; text-align: center; color: #333; font-size: 32px;  display: block;}
+.password1{margin: 119px auto 69px auto; }
+::-webkit-input-placeholder { color:#c5c5c5;}
+:-moz-placeholder {color:#c5c5c5;}
+.submit{ width: 493px; height: 90px; background: #3a9ff0; border-radius: 8px;color: #fff; text-align: center; line-height: 90px; font-size: 32px;}
+.submit1{ margin: 0 auto;}
+.up_in{ width: 493px; margin: 45px auto;}
+.up_in p{  font-size: 26px; color: #fff; padding-bottom: 5px; border-bottom: #fff solid 1px;}
+.other_user{ bottom: 56px; width: 100%; text-align: center; font-size: 26px; color: #fff;}
+.goback{ top: 20px; left: 0;}
+
+.p2_tel{ margin: 90px auto 0 auto; text-align: left; padding-left: 110px;}
+.p2_code{ width: 493px; margin: 35px auto 82px auto;}
+.i_code{ float: left; width: 292px;}
+.send_code{font-size: 32px; background: #fff;text-align: center; width: 192px; height: 90px; line-height: 90px;color: #339df3; border-radius: 8px; float: right;}
+.again_pswd{ margin: 35px auto 82px auto;}
+.p_title{ position: fixed; top: 0;left: 0; z-index: 99; width: 100%; height: 72px; background: #339df3; text-align: center; line-height: 80px; font-size: 34px; color: #fff;}
+
+.page2{ background: #fff;}
+.p2_con{ padding: 0 0 245px 0 ;}
+.p2_foot{ width: 100%; height: 240px;position: fixed; bottom: 0;left: 0; z-index: 99;background: #fff;}
+.p2_f_p1{ color: #434343; width: 100%; height: 109px; text-align: center; padding:30px 0 0 38px; }
+.p2_f_con{ width: 38px; height: 38px; background: url("../img/icons/signature_icon_UNAgreed.png");top: 25px; left: 189px; position: absolute;}
+.p2_f_con.active { background: url(../img/icons/signature_icon_Agreed.png) no-repeat;}
+.p2_checkbox{     width: 38px; height: 38px; opacity: 0;}
+.p2_btn{ display: block; width: 651px; height: 80px; line-height: 80px; margin: 0 auto; text-align: center; color: #fff; background: #aaa; font-size: 34px; border-radius: 8px;}
+.p2_btn.active{background: #ff793c}
+
+.p4_code{width: 630px; margin: 35px auto 82px auto;}
+.p4_pswd{ width: 630px; margin: 35px auto 0 auto; text-align: left; padding-left: 110px;}
+.p4_btn{ width: 630px; margin: 88px auto 0 auto;}
+.p4_select{ width: 630px; margin: 35px auto 50px auto; color: #fff; text-align: right; position: relative;}
+.p4_select_ipt{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.i_code2{ float: left; width: 355px;}
+.send_code.disabled{ background: #ccc;}
+.page6{ background: #fff;}
+.p6_iframe{ width: 100%; height: calc(100% - 250px); border: none; overflow: auto; width: 92%; margin: 20px auto 0 auto;}
+.p6_iframe p{    text-indent: 2em; font-size: 28px;
+    line-height: 180%;}
+
+.submit2{ width:635px; height: 80px; background: rgb(255,120,60); border-radius: 10px;color: #fff; text-align: center; line-height: 80px; font-size: 32px; display: block;}
+.contractBtn{ margin: 30px auto;}
+.checkbox_ctc{ text-align: center; margin-top: 30px;}
+.checkbox_ct{
+    width: 38px;
+    height: 38px;
+    background: url('../img/icons/signature_icon_UNAgreed.png') no-repeat;
+    background-size: 38px 38px;
+    left: 20px;
+    top: 15px; display: inline-block;
+}
+.checkbox_ct.active{
+    background: url('../img/icons/signature_icon_Agreed.png') no-repeat;
+    background-size: 38px 38px;
+}
+.checkbox_ctc span{ position: relative; top: 3px;}
+.checkbox_ct input[type=checkbox]{
+    width: 38px;
+    height: 38px;
+    opacity: 0;
+}
+.submit2.active{ background: rgb(170,170,170);}
+
+.p4_user{ position: absolute; left: 87px; top: 433px;}
+.p4_password{ position: absolute; left: 87px; top: 557px;}
+.p4_logo{ position: absolute; bottom: 53px; left: 246px;}
+
+
+
+
+
